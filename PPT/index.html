@@ -159,7 +159,8 @@
       margin-top: 10px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 5px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
     }
 
     .case-study-box.emerald {
@@ -172,6 +173,18 @@
       border-left-color: var(--color-gold);
       border-color: rgba(180, 83, 9, 0.25);
       background: linear-gradient(135deg, rgba(180, 83, 9, 0.06), rgba(245, 158, 11, 0.03));
+    }
+
+    .case-study-box.crimson {
+      border-left-color: var(--color-crimson);
+      border-color: rgba(225, 29, 72, 0.25);
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.06), rgba(245, 158, 11, 0.03));
+    }
+
+    .case-study-box.indigo {
+      border-left-color: var(--color-indigo);
+      border-color: rgba(79, 70, 229, 0.25);
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.06), rgba(2, 132, 199, 0.03));
     }
 
     .case-study-tag {
@@ -188,17 +201,79 @@
 
     .case-study-box.emerald .case-study-tag { color: var(--color-emerald); }
     .case-study-box.gold .case-study-tag { color: var(--color-gold); }
+    .case-study-box.crimson .case-study-tag { color: var(--color-crimson); }
+    .case-study-box.indigo .case-study-tag { color: var(--color-indigo); }
+
+    .case-study-live-pulse {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ef4444;
+      box-shadow: 0 0 8px #ef4444;
+      animation: pulseLive 1.8s infinite;
+    }
+    @keyframes pulseLive {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
 
     .case-study-title {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 700;
       color: #0f172a;
+      line-height: 1.35;
     }
 
     .case-study-desc {
       font-size: 0.74rem;
       color: #334155;
-      line-height: 1.42;
+      line-height: 1.44;
+    }
+
+    .case-study-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .cs-metric-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(203, 213, 225, 0.85);
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .cs-metric-chip span.val {
+      color: var(--color-cyan);
+    }
+    .case-study-box.emerald .cs-metric-chip span.val { color: var(--color-emerald); }
+    .case-study-box.gold .cs-metric-chip span.val { color: var(--color-gold); }
+    .case-study-box.crimson .cs-metric-chip span.val { color: var(--color-crimson); }
+    .case-study-box.indigo .cs-metric-chip span.val { color: var(--color-indigo); }
+
+    .afternoon-session-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #b45309;
+      box-shadow: 0 2px 8px rgba(180, 83, 9, 0.12);
+      font-family: var(--font-mono);
+      letter-spacing: 0.05em;
     }
 
     /* ==========================================================================
@@ -445,26 +520,64 @@
       position: relative;
       width: 100%;
       height: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid var(--border-subtle);
-      background: #ffffff;
+      border: 1px solid rgba(2, 132, 199, 0.35);
+      background: #070d1e;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: zoom-in;
+      box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.16), 0 4px 12px rgba(2, 132, 199, 0.1);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .infographic-frame:hover {
+      border-color: rgba(2, 132, 199, 0.7);
+      box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.28), 0 0 24px rgba(2, 132, 199, 0.25);
     }
 
     .infographic-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      background: #070d1e;
       display: block;
-      transition: transform 600ms ease;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .infographic-frame:hover .infographic-img {
-      transform: scale(1.025);
+      transform: scale(1.02);
+    }
+
+    /* Enhanced Infographic Pill Button */
+    .infographic-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(79, 70, 229, 0.12));
+      border: 1px solid rgba(2, 132, 199, 0.45);
+      color: var(--color-cyan);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.1);
+    }
+
+    .infographic-pill-btn:hover {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.24), rgba(79, 70, 229, 0.24));
+      border-color: rgba(2, 132, 199, 0.85);
+      color: #0284c7;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+    }
+
+    .infographic-pill-btn:active {
+      transform: translateY(0);
     }
 
     .infographic-overlay-hud {
@@ -2181,7 +2294,320 @@
       .channel-card .details h4 { font-size: 0.78rem; margin-bottom: 2px; }
       .channel-card .details p { font-size: 0.68rem; line-height: 1.25; }
       .sankey-canvas-wrap { height: 260px; }
-      .heatmap-table-wrap { max-height: 230px; }
+    /* ==========================================================================
+       15. TOP CONTROLS & SPEAKER SCRIPT TELEPROMPTER DRAWER
+       ========================================================================== */
+    .deck-top-actions {
+      position: fixed;
+      top: 14px;
+      right: 24px;
+      z-index: 1010;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .top-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(203, 213, 225, 0.9);
+      border-radius: 999px;
+      padding: 6px 14px 6px 12px;
+      font-family: var(--font-sans);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #0f172a;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+      transition: all var(--transition-fast);
+    }
+
+    .top-action-btn:hover {
+      background: #ffffff;
+      border-color: var(--color-cyan);
+      color: var(--color-cyan);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.2);
+    }
+
+    .top-action-btn .btn-icon {
+      font-size: 0.95rem;
+    }
+
+    .top-action-btn .btn-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: rgba(2, 132, 199, 0.1);
+      color: var(--color-cyan);
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(2, 132, 199, 0.25);
+    }
+
+    .top-action-btn.icon-only {
+      padding: 6px 10px;
+      font-size: 0.85rem;
+    }
+
+    /* Speaker Drawer Backdrop & Shell */
+    .speaker-drawer-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 1200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-fast);
+    }
+
+    .speaker-drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .speaker-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 480px;
+      max-width: 92vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border-left: 1px solid rgba(203, 213, 225, 0.95);
+      box-shadow: -15px 0 45px rgba(15, 23, 42, 0.16);
+      z-index: 1210;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform var(--transition-fast);
+      overflow: hidden;
+    }
+
+    .speaker-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      background: linear-gradient(180deg, #ffffff 0%, rgba(248, 250, 252, 0.8) 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .drawer-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .drawer-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .drawer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(2, 132, 199, 0.1);
+      color: var(--color-cyan);
+      border: 1px solid rgba(2, 132, 199, 0.25);
+    }
+
+    .drawer-tools {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .drawer-tool-btn {
+      background: rgba(241, 245, 249, 0.9);
+      border: 1px solid rgba(203, 213, 225, 0.9);
+      border-radius: 8px;
+      padding: 5px 9px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .drawer-tool-btn:hover {
+      background: #ffffff;
+      color: var(--color-cyan);
+      border-color: var(--color-cyan);
+    }
+
+    .drawer-close-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(241, 245, 249, 0.8);
+      border: 1px solid rgba(203, 213, 225, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #475569;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .drawer-close-btn:hover {
+      background: rgba(225, 29, 72, 0.1);
+      color: var(--color-crimson);
+      border-color: rgba(225, 29, 72, 0.3);
+    }
+
+    .drawer-speaker-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+
+    .drawer-speaker-sub {
+      font-size: 0.74rem;
+      color: #64748b;
+      font-family: var(--font-mono);
+    }
+
+    .drawer-content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      user-select: text;
+    }
+
+    .drawer-card {
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    }
+
+    .drawer-card.incoming {
+      border-left: 4px solid var(--color-gold);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), #ffffff);
+    }
+
+    .drawer-card.outgoing {
+      border-left: 4px solid var(--color-emerald);
+      background: linear-gradient(135deg, rgba(5, 150, 105, 0.05), #ffffff);
+    }
+
+    .drawer-card-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .drawer-card.incoming .drawer-card-label { color: var(--color-gold); }
+    .drawer-card.outgoing .drawer-card-label { color: var(--color-emerald); }
+
+    .drawer-card-text {
+      font-size: 0.8rem;
+      line-height: 1.45;
+      color: #1e293b;
+      font-style: italic;
+    }
+
+    .drawer-speech-body {
+      font-family: var(--font-sans);
+      font-size: 0.94rem;
+      line-height: 1.68;
+      color: #0f172a;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: font-size var(--transition-fast);
+    }
+
+    .drawer-speech-body p {
+      margin: 0;
+    }
+
+    .drawer-speech-body strong {
+      color: #0284c7;
+      font-weight: 700;
+    }
+
+    .drawer-speech-body .quote-block {
+      background: rgba(2, 132, 199, 0.06);
+      border-left: 3px solid var(--color-cyan);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-style: italic;
+      color: #0f172a;
+    }
+
+    .drawer-footer {
+      padding: 12px 20px;
+      border-top: 1px solid rgba(226, 232, 240, 0.9);
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .drawer-footer-nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    .drawer-footer-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid rgba(203, 213, 225, 0.9);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #0f172a;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .drawer-footer-btn:hover {
+      border-color: var(--color-cyan);
+      color: var(--color-cyan);
+      background: #f0f9ff;
     }
   </style>
 </head>
@@ -2193,6 +2619,16 @@
   <!-- Hairline Top Presentation Progress Indicator -->
   <div class="deck-top-progress" id="deck-top-progress">
     <div class="deck-progress-fill" id="progress-fill"></div>
+  </div>
+
+  <!-- Top Action Controls: Executive Shortcuts Guide -->
+  <div class="deck-top-actions">
+    <span class="afternoon-session-badge">
+      <span style="font-size: 0.85rem;">☀️</span> AFTERNOON EXECUTIVE SESSION
+    </span>
+    <button class="top-action-btn icon-only" id="btn-shortcuts" title="Keyboard Shortcuts (?)" aria-label="Shortcuts">
+      <span>⌨️</span>
+    </button>
   </div>
 
   <!-- Discreet Futuristic Edge Navigation Controls -->
@@ -2215,17 +2651,35 @@
       <section class="slide active" id="slide-0" data-speaker="EXECUTIVE COUNCIL" data-section="PROLOGUE">
         <div class="cinematic-container">
           
-          <!-- Scene 1: Opening Quote -->
+          <!-- Scene 1: Opening Quote & Keynote Infographic Showcase -->
           <div class="cine-scene visible" id="cine-scene-1">
-            <span class="brand-pill" style="margin-bottom: 16px; border-color: rgba(2, 132, 199, 0.4); color: var(--color-cyan); font-weight: 700; background: rgba(255,255,255,0.9);">
-              EXECUTIVE BRIEFING • 9-MEMBER TEAM PRESENTATION
-            </span>
-            <h1 class="scene-quote">
-              WHEN WE HEAR THE WORD WAR,<br />
-              <span style="font-size: 0.75em; font-weight: 600; color: #334155; -webkit-text-fill-color: initial;">we think of soldiers, weapons and destruction.</span><br />
-              <span class="highlight-word gold" style="display:inline-block; margin-top: 10px;">BUT THERE IS ANOTHER BATTLEFIELD: THE BATTLEFIELD OF MONEY.</span>
-            </h1>
-            <div class="scene-quote-sub">Good morning everyone • Topic Introduction</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1240px; gap: 32px; text-align: left;">
+              <div style="flex: 1.25;">
+                <span class="brand-pill" style="margin-bottom: 16px; border-color: rgba(2, 132, 199, 0.4); color: var(--color-cyan); font-weight: 700; background: rgba(255,255,255,0.9);">
+                  AFTERNOON EXECUTIVE BRIEFING • 9-MEMBER TEAM PRESENTATION
+                </span>
+                <h1 class="scene-quote" style="text-align: left; font-size: clamp(1.9rem, 3vw, 3rem);">
+                  WHEN WE HEAR THE WORD WAR,<br />
+                  <span style="font-size: 0.75em; font-weight: 600; color: #334155; -webkit-text-fill-color: initial;">we think of soldiers, weapons and destruction.</span><br />
+                  <span class="highlight-word gold" style="display:inline-block; margin-top: 10px;">BUT THERE IS ANOTHER BATTLEFIELD: THE BATTLEFIELD OF MONEY.</span>
+                </h1>
+                <div class="scene-quote-sub" style="text-align: left; margin: 12px 0 20px 0;">Good afternoon everyone • Topic Introduction</div>
+                <div style="display: flex; gap: 12px; align-items: center;">
+                  <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/0.jpg', 'PROLOGUE KEYNOTE: War Does Not Need to Cross Our Border to Reach Us — Macroeconomic Shock Transmission')" style="padding: 7px 16px; font-size: 0.8rem;">
+                    🖼️ View 4K Keynote Strategic Poster
+                  </button>
+                </div>
+              </div>
+              <div style="flex: 0.95; max-width: 500px;">
+                <div class="infographic-frame" style="height: 300px; box-shadow: 0 20px 40px rgba(15,23,42,0.18);" data-lightbox-src="assets/echo/0.jpg" data-lightbox-caption="PROLOGUE KEYNOTE: War Does Not Need to Cross Our Border to Reach Us">
+                  <img src="assets/echo/0.jpg" alt="Keynote Strategic Poster" class="infographic-img" />
+                  <div class="infographic-overlay-hud">
+                    <span class="hud-chip">🖼️ 4K KEYNOTE STRATEGIC POSTER</span>
+                    <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Scene 2: The Transmission Premise -->
@@ -2307,6 +2761,12 @@
               </p>
             </div>
 
+            <div style="margin-bottom: 14px;">
+              <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/0.jpg', 'PROLOGUE KEYNOTE: War Does Not Need to Cross Our Border to Reach Us — Macroeconomic Shock Transmission')" style="padding: 6px 18px; font-size: 0.82rem;">
+                🖼️ Inspect 4K Keynote Strategic Infographic Poster
+              </button>
+            </div>
+
             <!-- 9-Member Roster -->
             <div class="team-reveal-grid" id="team-roster">
               <div class="team-member-card" style="transition-delay: 40ms;">
@@ -2362,6 +2822,7 @@
       <section class="slide" id="slide-1" data-speaker="AMRUTHA" data-section="INTRODUCTION">
         <div class="slide-meta-bar">
           <span class="speaker-badge"><span class="dot"></span> PERSON 1: AMRUTHA • INTRODUCTION</span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/1.jpg', 'PERSON 1: AMRUTHA — How War Affects the Indian Economy &amp; Its Financial System')">🖼️ View HD Infographic</button>
           <span class="slide-number">01 / 09</span>
         </div>
         <div class="slide-title-wrap">
@@ -2370,18 +2831,33 @@
         </div>
 
         <div class="slide-content-grid grid-2col">
-          <!-- Interactive Transmission Map with Vector & 3D Infographic Views -->
+          <!-- Interactive Transmission Map with Vector & HD Infographic Views -->
           <div class="glass-panel" style="padding: 14px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <span class="brand-pill" style="color: var(--color-cyan); border-color: rgba(56,189,248,0.4);">MARITIME RADAR</span>
+              <span class="brand-pill" style="color: var(--color-cyan); border-color: rgba(56,189,248,0.4);">TRANSMISSION RADAR</span>
               <div class="toggle-subnav" id="subnav-slide-1">
-                <button class="subnav-btn active" id="btn-view-s1-vector">Vector Routes</button>
-                <button class="subnav-btn" id="btn-view-s1-satellite">3D Tactical Chokepoints</button>
+                <button class="subnav-btn active" data-target="s1-view-infographic">🖼️ Infographic Poster</button>
+                <button class="subnav-btn" data-target="s1-view-vector">Vector Routes</button>
               </div>
             </div>
 
-            <!-- View A: Interactive Vector Route Map -->
-            <div class="map-container" id="s1-view-vector" style="height: calc(100% - 70px); min-height: 380px;">
+            <!-- View A: HD Infographic Poster (Active Default) -->
+            <div class="infographic-frame" id="s1-view-infographic" style="height: calc(100% - 70px); min-height: 380px;" data-lightbox-src="assets/echo/1.jpg" data-lightbox-caption="PERSON 1: AMRUTHA — How War Affects the Indian Economy &amp; Its Financial System">
+              <img src="assets/echo/1.jpg" alt="Person 1 Infographic" class="infographic-img" />
+              <div class="infographic-overlay-hud">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="hud-chip">🖼️ PERSON 1 INFOGRAPHIC POSTER</span>
+                  <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Amrutha • Battlefield of Money</span>
+                  <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">Global Transmission Flow</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View B: Interactive Vector Route Map -->
+            <div class="map-container" id="s1-view-vector" style="display: none; height: calc(100% - 70px); min-height: 380px;">
               <button class="pulse-shock-btn" id="btn-trigger-shock-map">
                 <span>⚡ Pulse War Shock</span>
               </button>
@@ -2428,49 +2904,6 @@
                   <text x="12" y="49" fill="var(--text-muted)" font-size="9">Fertilizer Raw Materials: ~40%</text>
                 </g>
               </svg>
-            </div>
-
-            <!-- View B: 3D Satellite Tactical Chokepoints Infographic -->
-            <div class="infographic-frame" id="s1-view-satellite" style="display: none; height: calc(100% - 70px); min-height: 380px;" data-lightbox-src="assets/maritime_chokepoints.jpg" data-lightbox-caption="GLOBAL ENERGY FLOWS: Persian Gulf & Red Sea Maritime Corridors to India">
-              <img src="assets/maritime_chokepoints.jpg" alt="Global Maritime Energy Chokepoints" class="infographic-img" />
-              
-              <!-- Interactive Hotspots -->
-              <div class="hud-hotspot" style="left: 31%; top: 22%;">
-                <div class="hotspot-dot"></div>
-                <div class="hotspot-label">Hormuz (82% Crude Flow)</div>
-              </div>
-
-              <div class="hud-hotspot" style="left: 10%; top: 72%;">
-                <div class="hotspot-dot" style="background: var(--color-crimson); box-shadow: 0 0 15px var(--color-crimson);"></div>
-                <div class="hotspot-label">Bab al-Mandab (19% Tanker Traffic)</div>
-              </div>
-
-              <div class="hud-hotspot cyan" style="left: 58%; top: 27%;">
-                <div class="hotspot-dot"></div>
-                <div class="hotspot-label">Jamnagar Refinery Hub</div>
-              </div>
-
-              <div class="hud-hotspot cyan" style="left: 68%; top: 38%;">
-                <div class="hotspot-dot"></div>
-                <div class="hotspot-label">Mumbai Container Terminal</div>
-              </div>
-
-              <div class="hud-hotspot emerald" style="left: 88%; top: 36%;">
-                <div class="hotspot-dot"></div>
-                <div class="hotspot-label">Visakhapatnam SPR Inlet</div>
-              </div>
-
-              <!-- HUD Overlay Controls -->
-              <div class="infographic-overlay-hud">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <span class="hud-chip">🛰️ 3D REUTERS/BLOOMBERG INFOGRAPHIC</span>
-                  <span class="hud-chip" style="background: rgba(0,0,0,0.6); color: #fff; cursor: pointer;">🔍 Click to Zoom</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                  <span style="font-size: 0.7rem; color: var(--text-dim); font-family: var(--font-mono);">147 Active Tankers • 4.8M bbl/day Volume</span>
-                  <span style="font-size: 0.7rem; color: var(--color-gold); font-family: var(--font-mono);">Transit: 9–12 Days</span>
-                </div>
-              </div>
             </div>
 
             <div class="source-tag">
@@ -2521,6 +2954,23 @@
               </div>
             </div>
 
+            <!-- Real-Time Case Study: Red Sea Crisis & Bab-el-Mandeb Rerouting -->
+            <div class="case-study-box crimson" style="margin-top: 8px;">
+              <div class="case-study-tag">
+                <span class="case-study-live-pulse"></span>
+                <span>REAL-TIME CASE STUDY • MARITIME SUPPLY SHOCK</span>
+              </div>
+              <div class="case-study-title">Red Sea Crisis & Bab-el-Mandeb Rerouting (2024–2026)</div>
+              <div class="case-study-desc">
+                When drone strikes disrupted the Red Sea & Suez Canal route (handling 12% of global trade), Indian cargo ships were forced to circumnavigate Africa via the Cape of Good Hope (+14 days transit, +3,500 nautical miles). Container rates from JNPT/Mundra to Europe surged from $1,500 to $4,500 per FEU with a 500% spike in war-risk insurance.
+              </div>
+              <div class="case-study-metrics">
+                <span class="cs-metric-chip"><span class="val">+14 Days</span> Transit Delay</span>
+                <span class="cs-metric-chip"><span class="val">+250%</span> Freight Spike</span>
+                <span class="cs-metric-chip"><span class="val">10+ Warships</span> Indian Navy Escorts</span>
+              </div>
+            </div>
+
             <!-- Person 1 Key Speech Conclusion -->
             <div style="background: rgba(2, 132, 199, 0.08); border-left: 3px solid var(--color-cyan); padding: 8px 12px; border-radius: 6px; margin-top: 6px;">
               <div style="font-size: 0.68rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; margin-bottom: 2px;">Keynote Delivery • Person 1 (Amrutha)</div>
@@ -2538,6 +2988,7 @@
       <section class="slide" id="slide-2" data-speaker="JASWANTH" data-section="PRICES & WALLET">
         <div class="slide-meta-bar">
           <span class="speaker-badge"><span class="dot"></span> PERSON 2: JASWANTH • PRICES &amp; CURRENCY</span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/2.jpg', 'PERSON 2: JASWANTH — How War Hits Our Wallet: Prices &amp; Currency')">🖼️ View HD Infographic</button>
           <span class="slide-number">02 / 09</span>
         </div>
         <div class="slide-title-wrap">
@@ -2589,13 +3040,29 @@
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <span class="brand-pill" style="color: var(--color-gold); border-color: rgba(245,158,11,0.4);">INFLATION CONDUIT</span>
               <div class="toggle-subnav" id="subnav-slide-2">
-                <button class="subnav-btn active" id="btn-view-s2-barrel">Crude Simulator</button>
-                <button class="subnav-btn" id="btn-view-s2-basket">CPI Basket Breakdown</button>
+                <button class="subnav-btn active" data-target="s2-view-infographic">🖼️ Infographic Poster</button>
+                <button class="subnav-btn" data-target="s2-view-barrel">Crude Simulator</button>
+                <button class="subnav-btn" data-target="s2-view-basket">CPI Basket Breakdown</button>
               </div>
             </div>
 
-            <!-- View A: Interactive Oil Barrel Transmission Simulator -->
-            <div id="s2-view-barrel" class="barrel-interactive-wrap">
+            <!-- View A: HD Infographic Poster (Active Default) -->
+            <div class="infographic-frame" id="s2-view-infographic" style="height: 100%; min-height: 380px;" data-lightbox-src="assets/echo/2.jpg" data-lightbox-caption="PERSON 2: JASWANTH — How War Hits Our Wallet: Prices &amp; Currency">
+              <img src="assets/echo/2.jpg" alt="Person 2 Infographic" class="infographic-img" />
+              <div class="infographic-overlay-hud">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="hud-chip">🖼️ PERSON 2 INFOGRAPHIC POSTER</span>
+                  <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Jaswanth • Prices &amp; Currency</span>
+                  <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">Oil Spike ➔ Inflation ➔ Rupee Pressure</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View B: Interactive Oil Barrel Transmission Simulator -->
+            <div id="s2-view-barrel" class="barrel-interactive-wrap" style="display: none;">
               <!-- Visual Animated Oil Barrel -->
               <div class="barrel-svg-box">
                 <svg viewBox="0 0 100 130" width="100%" height="100%">
@@ -2733,18 +3200,21 @@
               </div>
             </div>
 
-            <!-- Verified Real World Card -->
-            <div class="glass-panel" style="padding: 12px 14px;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                <span class="speaker-badge" style="color: var(--color-cyan); border-color: rgba(56,189,248,0.3); font-size: 0.65rem;">CURRENCY &amp; IMPORTS</span>
-                <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);">US DOLLAR SHIFT</span>
+            <!-- Real-Time Case Study: Black Sea Edible Oil Blockade & Rupee Defense -->
+            <div class="case-study-box gold">
+              <div class="case-study-tag">
+                <span class="case-study-live-pulse"></span>
+                <span>REAL-TIME CASE STUDY • WALLET & CURRENCY TRANSMISSION</span>
               </div>
-              <div style="font-size: 0.84rem; font-weight: 700; color: #0f172a; margin-bottom: 3px;">
-                Investors Shift to US Dollar → Rupee Weakens
+              <div class="case-study-title">Black Sea Edible Oil Blockade & RBI Rupee Defense (2022–2026)</div>
+              <div class="case-study-desc">
+                Ukraine supplied 74% of India's sunflower oil before maritime blockades halted shipments, causing Indian retail cooking oil prices to surge by 35% in three weeks. Concurrently, US Dollar safe-haven capital flight pushed the USD/INR exchange rate under pressure, forcing the RBI to deploy $70 Billion+ from its foreign exchange reserves to anchor the Rupee and cushion landed import bills.
               </div>
-              <p style="font-size: 0.73rem; color: var(--text-muted); line-height: 1.4;">
-                During global uncertainty, investors prefer safer currencies like the US dollar. This weakens the rupee and makes vital crude oil and edible oil imports even more expensive for India.
-              </p>
+              <div class="case-study-metrics">
+                <span class="cs-metric-chip"><span class="val">74%</span> Sunflower Oil Risk</span>
+                <span class="cs-metric-chip"><span class="val">+35%</span> Kitchen Oil Spike</span>
+                <span class="cs-metric-chip"><span class="val">$70B+</span> RBI Forex Intervention</span>
+              </div>
             </div>
 
             <!-- Person 2 Conclusion Quote Box -->
@@ -2764,6 +3234,7 @@
       <section class="slide" id="slide-3" data-speaker="PREM" data-section="FINANCIAL MARKETS">
         <div class="slide-meta-bar">
           <span class="speaker-badge"><span class="dot"></span> PERSON 3: PREM • HOW WAR MEETS THE MARKET</span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/3.jpg', 'PERSON 3: PREM — How War Meets the Market')">🖼️ View HD Infographic</button>
           <span class="slide-number">03 / 09</span>
         </div>
         <div class="slide-title-wrap">
@@ -2782,13 +3253,28 @@
                 <div class="ticker-item"><span style="color:#0f172a;">GOLD (MCX):</span> <span class="ticker-up">+4.1% ▲</span></div>
               </div>
               <div class="toggle-subnav" id="subnav-slide-3">
-                <button class="subnav-btn active" id="btn-view-s3-chart">Volatility Curve</button>
-                <button class="subnav-btn" id="btn-view-s3-floor">Trading Floor (3D)</button>
+                <button class="subnav-btn active" data-target="s3-view-infographic">🖼️ Infographic Poster</button>
+                <button class="subnav-btn" data-target="s3-view-chart">Volatility Curve</button>
               </div>
             </div>
 
-            <!-- View A: Interactive Chart Area -->
-            <div class="chart-canvas-wrap" id="s3-view-chart">
+            <!-- View A: HD Infographic Poster (Active Default) -->
+            <div class="infographic-frame" id="s3-view-infographic" style="height: 100%; min-height: 280px;" data-lightbox-src="assets/echo/3.jpg" data-lightbox-caption="PERSON 3: PREM — How War Meets the Market">
+              <img src="assets/echo/3.jpg" alt="Person 3 Infographic" class="infographic-img" />
+              <div class="infographic-overlay-hud">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="hud-chip">🖼️ PERSON 3 INFOGRAPHIC POSTER</span>
+                  <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Prem • How War Meets the Market</span>
+                  <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">Market Uncertainty &amp; Sharp Swings</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View B: Interactive Chart Area -->
+            <div class="chart-canvas-wrap" id="s3-view-chart" style="display: none;">
               <div class="vix-overlay">
                 <span>⚠️ WAR SHOCK ACTIVATED</span>
                 <span style="font-weight: 700;">RISK-OFF REGIME</span>
@@ -2825,39 +3311,6 @@
                 <text x="270" y="225" fill="var(--color-crimson)" font-size="9" font-family="var(--font-mono)">Day 0 (Shock)</text>
                 <text x="470" y="225" fill="var(--text-dim)" font-size="9" font-family="var(--font-mono)">T+30 Days (Absorption)</text>
               </svg>
-            </div>
-
-            <!-- View B: 3D Dalal Street Trading Floor Infographic -->
-            <div class="infographic-frame" id="s3-view-floor" style="display: none; height: 100%; min-height: 240px;" data-lightbox-src="assets/financial_markets.jpg" data-lightbox-caption="DALAL STREET COMMAND CENTER: Real-Time Geopolitical Risk Pricing on NIFTY & Rupee">
-              <img src="assets/financial_markets.jpg" alt="Dalal Street Trading Floor" class="infographic-img" />
-
-              <!-- Interactive Hotspots -->
-              <div class="hud-hotspot" style="left: 45%; top: 48%;">
-                <div class="hotspot-dot" style="background: var(--color-crimson);"></div>
-                <div class="hotspot-label">NIFTY 50: -2.15% Day 1 Shock</div>
-              </div>
-
-              <div class="hud-hotspot" style="left: 82%; top: 22%;">
-                <div class="hotspot-dot" style="background: var(--color-cyan);"></div>
-                <div class="hotspot-label">USD/INR Desk: ₹83.45 (RBI Watch)</div>
-              </div>
-
-              <div class="hud-hotspot" style="left: 55%; top: 18%;">
-                <div class="hotspot-dot" style="background: var(--color-gold);"></div>
-                <div class="hotspot-label">Crude Alert: Surges > $110</div>
-              </div>
-
-              <!-- HUD Overlay Controls -->
-              <div class="infographic-overlay-hud">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <span class="hud-chip">📊 MUMBAI FINANCIAL COMMAND CENTER</span>
-                  <span class="hud-chip" style="background: rgba(0,0,0,0.6); color: #fff; cursor: pointer;">🔍 Click to Zoom</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                  <span style="font-size: 0.7rem; color: var(--text-dim); font-family: var(--font-mono);">Institutional FPI Outflow: ₹4,200 Cr</span>
-                  <span style="font-size: 0.7rem; color: var(--color-emerald); font-family: var(--font-mono);">DII SIP Absorption: Strong</span>
-                </div>
-              </div>
             </div>
 
             <div class="source-tag">
@@ -2920,12 +3373,20 @@
               <em>Select or hover over any sector card to review operational transmission factors.</em>
             </div>
 
-            <!-- Case Study: Domestic SIP Shield -->
-            <div class="case-study-box" style="margin-top: 8px;">
-              <div class="case-study-tag">📈 CASE STUDY • EQUITY RESILIENCE</div>
-              <div class="case-study-title">₹2.1 Lakh Crore FPI Flight vs Domestic SIP Shield (2022–2023)</div>
+            <!-- Real-Time Case Study: Domestic SIP Shield vs FPI Selloff -->
+            <div class="case-study-box indigo" style="margin-top: 8px;">
+              <div class="case-study-tag">
+                <span class="case-study-live-pulse"></span>
+                <span>REAL-TIME CASE STUDY • EQUITY RESILIENCE FORTRESS</span>
+              </div>
+              <div class="case-study-title">₹2.1 Lakh Crore FPI Selloff vs Domestic SIP Shield (2022–2026)</div>
               <div class="case-study-desc">
-                When geopolitical conflict flared, Foreign Portfolio Investors (FPIs) dumped ₹2.1 lakh crore of Indian equities. However, domestic retail SIP inflows (surpassing ₹18,000 Cr/month) absorbed the entire selling pressure, shielding Nifty 50 from collapse and illustrating India's emergent domestic liquidity fortress.
+                When geopolitical conflict flared, Foreign Portfolio Investors (FPIs) dumped over ₹2.1 lakh crore of Indian equities. Historically, this would have triggered a 25%+ market freefall. Instead, domestic retail Systematic Investment Plans (SIPs)—now surging beyond ₹25,000 Crore/month ($3B/mo)—absorbed the selling pressure entirely, preventing systemic collapse and illustrating India's domestic financial self-reliance.
+              </div>
+              <div class="case-study-metrics">
+                <span class="cs-metric-chip"><span class="val">₹2.1L Cr</span> FPI Outflows</span>
+                <span class="cs-metric-chip"><span class="val">₹25,000+ Cr/mo</span> Retail SIP Fortress</span>
+                <span class="cs-metric-chip"><span class="val">Zero Crash</span> Institutional Cushion</span>
               </div>
             </div>
           </div>
@@ -2938,6 +3399,7 @@
       <section class="slide" id="slide-4" data-speaker="SRIKAR" data-section="STOCK MARKET">
         <div class="slide-meta-bar">
           <span class="speaker-badge"><span class="dot"></span> PERSON 4: SRIKAR • SENSEX &amp; NIFTY 50</span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/4.jpg', 'PERSON 4: SRIKAR — How War Puts the Stock Market Under Pressure (Sensex &amp; Nifty 50)')">🖼️ View HD Infographic</button>
           <span class="slide-number">04 / 09</span>
         </div>
         <div class="slide-title-wrap">
@@ -2991,13 +3453,29 @@
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
               <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">Banking Stress-Testing Framework</h3>
               <div class="toggle-subnav" id="subnav-slide-4">
-                <button class="subnav-btn active" id="btn-view-s4-gauges">Risk Gauges</button>
-                <button class="subnav-btn" id="btn-view-s4-matrix">Stress-Test Infographic</button>
+                <button class="subnav-btn active" data-target="s4-view-infographic">🖼️ Infographic Poster</button>
+                <button class="subnav-btn" data-target="s4-view-gauges">Risk Gauges</button>
+                <button class="subnav-btn" data-target="s4-view-matrix">Stress-Test Infographic</button>
               </div>
             </div>
 
-            <!-- View A: Circular Risk Gauges -->
-            <div id="s4-view-gauges">
+            <!-- View A: HD Infographic Poster (Active Default) -->
+            <div class="infographic-frame" id="s4-view-infographic" style="height: 100%; min-height: 280px;" data-lightbox-src="assets/echo/4.jpg" data-lightbox-caption="PERSON 4: SRIKAR — How War Puts the Stock Market Under Pressure">
+              <img src="assets/echo/4.jpg" alt="Person 4 Infographic" class="infographic-img" />
+              <div class="infographic-overlay-hud">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="hud-chip">🖼️ PERSON 4 INFOGRAPHIC POSTER</span>
+                  <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Srikar • Stock Market Pressure</span>
+                  <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">Sensex -2,735 &amp; Nifty 50 -826 Volatility</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View B: Circular Risk Gauges -->
+            <div id="s4-view-gauges" style="display: none;">
               <div style="display: flex; justify-content: flex-end; margin-bottom: 6px;">
                 <button class="hud-btn" id="btn-toggle-bank-stress" style="padding: 3px 8px; font-size: 0.68rem;">
                   ⚡ Simulate Severe Shock
@@ -3137,16 +3615,21 @@
           <!-- RBI Real-World Policy Case -->
           <div class="glass-panel" style="justify-content: space-between;">
             <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span class="speaker-badge" style="color: var(--color-crimson); border-color: rgba(225,29,72,0.3);">MARKET SHOCK CASE STUDY</span>
-                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim);">FEB 2022 SENSEX CRASH</span>
+              <div class="case-study-box crimson" style="margin-top: 0; margin-bottom: 10px;">
+                <div class="case-study-tag">
+                  <span class="case-study-live-pulse"></span>
+                  <span>REAL-TIME CASE STUDY • STOCK MARKET SHOCK &amp; SECTOR DIVERGENCE</span>
+                </div>
+                <div class="case-study-title">BSE Sensex -2,735 Pt Flash Crash &amp; Sector Divergence (2022–2026)</div>
+                <div class="case-study-desc">
+                  When hostilities commenced in Feb 2022, market fear triggered automated selling: BSE Sensex collapsed 2,702 points and Nifty plunged 815 points in a single session. However, fundamentals swiftly decoupled performance: Aviation &amp; Auto plummeted (-8% to -12% on jet fuel/freight spikes), while indigenous Defence PSUs (HAL, BEL, Mazagon Dock) rallied +40% to +120% under the Atmanirbhar Bharat defence mandate.
+                </div>
+                <div class="case-study-metrics">
+                  <span class="cs-metric-chip"><span class="val">-2,735 Pts</span> Sensex Shock</span>
+                  <span class="cs-metric-chip"><span class="val">Aviation -12%</span> Fuel Squeeze</span>
+                  <span class="cs-metric-chip"><span class="val">Defence +120%</span> Order Backlog Surge</span>
+                </div>
               </div>
-              <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 4px;">
-                Russia-Ukraine Conflict: -2,700 Points in a Single Session
-              </h3>
-              <p style="font-size: 0.76rem; color: var(--text-muted); line-height: 1.45; margin-bottom: 10px;">
-                When conflict erupted in February 2022, geopolitical fear triggered sudden panic selling, causing the BSE Sensex to crash over 2,700 points in one trading session. Foreign Portfolio Investors (FPIs) pulled out substantial capital towards safe havens, weakening the Rupee and inflating landed crude costs.
-              </p>
               
               <div style="display: flex; gap: 10px; margin-bottom: 10px;">
                 <div style="background: rgba(248, 250, 252, 0.95); border: 1px solid rgba(203, 213, 225, 0.85); border-radius: 6px; padding: 6px 10px; flex: 1;">
@@ -3182,6 +3665,7 @@
       <section class="slide" id="slide-5" data-speaker="PRASANNA" data-section="MACRO ECONOMY">
         <div class="slide-meta-bar">
           <span class="speaker-badge"><span class="dot"></span> PERSON 5: PRASANNA • INDIAN ECONOMY</span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/5.jpg', 'PERSON 5: PRASANNA — Impact of War on the Indian Economy')">🖼️ View HD Infographic</button>
           <span class="slide-number">05 / 09</span>
         </div>
         <div class="slide-title-wrap">
@@ -3190,14 +3674,33 @@
         </div>
 
         <div class="slide-content-grid grid-macro">
-          <!-- Flowing Macro Sankey-Style Animated Diagram -->
+          <!-- Flowing Macro Sankey-Style Animated Diagram & Infographic Poster -->
           <div class="glass-panel">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">Macroeconomic Transmission Flow (Sankey Mechanics)</h3>
-              <span class="brand-pill">DYNAMIC FLOWS</span>
+              <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">Macro Transmission Architecture</h3>
+              <div class="toggle-subnav" id="subnav-slide-5-flow">
+                <button class="subnav-btn active" data-target="s5-view-infographic">🖼️ Infographic Poster</button>
+                <button class="subnav-btn" data-target="s5-view-sankey">Sankey Mechanics</button>
+              </div>
             </div>
 
-            <div class="sankey-canvas-wrap">
+            <!-- View A: HD Infographic Poster (Active Default) -->
+            <div class="infographic-frame" id="s5-view-infographic" style="height: calc(100% - 70px); min-height: 340px;" data-lightbox-src="assets/echo/5.jpg" data-lightbox-caption="PERSON 5: PRASANNA — Impact of War on the Indian Economy">
+              <img src="assets/echo/5.jpg" alt="Person 5 Infographic" class="infographic-img" />
+              <div class="infographic-overlay-hud">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="hud-chip">🖼️ PERSON 5 INFOGRAPHIC POSTER</span>
+                  <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Prasanna • Indian Economy Impact</span>
+                  <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">Unemployment, Food Prices &amp; GDP Drag</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View B: Interactive Sankey Flow Canvas -->
+            <div class="sankey-canvas-wrap" id="s5-view-sankey" style="display: none;">
               <svg viewBox="0 0 650 340" style="width: 100%; height: 100%;">
                 <defs>
                   <!-- Stream Gradients -->
@@ -3326,6 +3829,23 @@
                 <div class="macro-kpi-val" style="color: var(--color-cyan);">Budget Hit</div>
               </div>
 
+              <!-- Real-Time Case Study: $13B Russian Crude Discount Arbitrage -->
+              <div class="case-study-box emerald" style="margin-top: 6px; margin-bottom: 4px;">
+                <div class="case-study-tag">
+                  <span class="case-study-live-pulse"></span>
+                  <span>REAL-TIME CASE STUDY • MACRO TWIN DEFICIT INSULATION</span>
+                </div>
+                <div class="case-study-title">$13 Billion Russian Crude Discount &amp; CAD Buffer (2022–2026)</div>
+                <div class="case-study-desc">
+                  When global benchmark Brent surged past $120/bbl, India exercised strategic autonomy, elevating discounted Russian oil purchases from &lt;2% to over 40% of imports. This avoided an estimated $13 Billion in landed foreign exchange outflows, prevented the Current Account Deficit (CAD) from breaching safe thresholds, and kept domestic inflation significantly lower than OECD peers.
+                </div>
+                <div class="case-study-metrics">
+                  <span class="cs-metric-chip"><span class="val">&lt;2% ➔ 40%+</span> Russian Crude Share</span>
+                  <span class="cs-metric-chip"><span class="val">~$13B</span> Forex Savings</span>
+                  <span class="cs-metric-chip"><span class="val">CAD &lt;2%</span> Deficit Cushion</span>
+                </div>
+              </div>
+
               <!-- Person 5 Conclusion Quote Box -->
               <div style="background: rgba(225, 29, 72, 0.08); border-left: 3px solid var(--color-crimson); padding: 8px 12px; border-radius: 6px; margin-top: 4px;">
                 <div style="font-size: 0.66rem; font-weight: 700; color: var(--color-crimson); text-transform: uppercase; margin-bottom: 2px;">Key Conclusion • Person 5 (Prasanna)</div>
@@ -3418,6 +3938,7 @@
       <section class="slide" id="slide-6" data-speaker="HAVILA" data-section="GOVERNMENT">
         <div class="slide-meta-bar">
           <span class="speaker-badge"><span class="dot"></span> PERSON 6: HAVILA • GOVERNMENT &amp; POLICY</span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/6.jpg', 'PERSON 6: HAVILA — How War Affects the Indian Government &amp; Its Response')">🖼️ View HD Infographic</button>
           <span class="slide-number">06 / 09</span>
         </div>
         <div class="slide-title-wrap">
@@ -3468,13 +3989,29 @@
               Maritime Security & Seafarer Protection Doctrine
             </div>
             <div class="toggle-subnav" id="subnav-slide-6">
-              <button class="subnav-btn active" id="btn-view-s6-timeline">Escalation Protocol</button>
-              <button class="subnav-btn" id="btn-view-s6-radar">Tactical Radar Grid</button>
+              <button class="subnav-btn active" data-target="s6-view-infographic">🖼️ Infographic Poster</button>
+              <button class="subnav-btn" data-target="s6-view-timeline">Escalation Protocol</button>
+              <button class="subnav-btn" data-target="s6-view-radar">Tactical Radar Grid</button>
+            </div>
+          </div>
+
+          <!-- View A: HD Infographic Poster (Active Default) -->
+          <div class="infographic-frame" id="s6-view-infographic" style="height: 100%; min-height: 260px;" data-lightbox-src="assets/echo/6.jpg" data-lightbox-caption="PERSON 6: HAVILA — How War Affects the Indian Government &amp; Its Response">
+            <img src="assets/echo/6.jpg" alt="Person 6 Infographic" class="infographic-img" />
+            <div class="infographic-overlay-hud">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="hud-chip">🖼️ PERSON 6 INFOGRAPHIC POSTER</span>
+                <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Havila • Government &amp; Seafarers Response</span>
+                <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">1 in 10 Seafarers Globally • 3-Part Peace Proposal</span>
+              </div>
             </div>
           </div>
           
-          <!-- View A: Response Timeline -->
-          <div class="timeline-strip" id="s6-view-timeline">
+          <!-- View B: Response Timeline -->
+          <div class="timeline-strip" id="s6-view-timeline" style="display: none;">
             <div class="timeline-node active" data-step="1">
               <div class="timeline-dot"></div>
               <div class="timeline-label">1. SECURITY EVENT (Drone/Missile Threat)</div>
@@ -3550,12 +4087,20 @@
             </div>
           </div>
 
-          <!-- Informative Case Study: Operation Sankalp -->
+          <!-- Real-Time Case Study: Operation Sankalp -->
           <div class="case-study-box emerald" style="margin-top: 8px;">
-            <div class="case-study-tag">⚓ CASE STUDY • MARITIME CONVOY SHIELD</div>
-            <div class="case-study-title">Operation Sankalp: Indian Navy Escort in the Arabian Sea (2024–2026)</div>
+            <div class="case-study-tag">
+              <span class="case-study-live-pulse"></span>
+              <span>REAL-TIME CASE STUDY • MARITIME CONVOY SHIELD &amp; RESCUE</span>
+            </div>
+            <div class="case-study-title">Operation Sankalp: Indian Navy Escorts &amp; Seafarer Rescues (2024–2026)</div>
             <div class="case-study-desc">
-              Deploying front-line guided missile destroyers (INS Kolkata, INS Visakhapatnam) and maritime patrol aircraft across the Gulf of Aden and Bab-el-Mandeb, India provided continuous escort for over 1,100 merchant vessels, directly safeguarding ~250,000 Indian seafarers (9.5% global workforce) with zero hostile drone intercepts breached.
+              Deploying front-line guided missile destroyers (INS Kolkata, INS Visakhapatnam, INS Kochi) and MARCOS commandos across the Gulf of Aden and Arabian Sea, India provided continuous escort for over 1,100 merchant vessels, directly safeguarding ~250,000 Indian seafarers (9.5% global workforce) and carrying out high-profile anti-drone and anti-piracy rescues (MV Chem Pluto &amp; MV Ruen).
+            </div>
+            <div class="case-study-metrics">
+              <span class="cs-metric-chip"><span class="val">1,100+</span> Commercial Vessels Escorted</span>
+              <span class="cs-metric-chip"><span class="val">~250,000</span> Indian Seafarers Shielded</span>
+              <span class="cs-metric-chip"><span class="val">10+ Warships</span> Active 24/7 Deployment</span>
             </div>
           </div>
 
@@ -3580,6 +4125,7 @@
       <section class="slide" id="slide-7" data-speaker="SWATHI" data-section="CHALLENGES">
         <div class="slide-meta-bar">
           <span class="speaker-badge"><span class="dot"></span> PERSON 7: SWATHI • CHALLENGES INDIA FACES</span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/7.jpg', 'PERSON 7: SWATHI — Challenges India Faces')">🖼️ View HD Infographic</button>
           <span class="slide-number">07 / 09</span>
         </div>
         <div class="slide-title-wrap">
@@ -3631,13 +4177,29 @@
               <p style="font-size: 0.7rem; color: var(--text-dim);">Downstream economic propagation vs multi-vector strategic exposure matrix.</p>
             </div>
             <div class="toggle-subnav" id="subnav-slide-7">
-              <button class="subnav-btn active" id="btn-view-s7-domino">Domino Cascade</button>
-              <button class="subnav-btn" id="btn-view-s7-matrix">Vulnerability Matrix (2x2)</button>
+              <button class="subnav-btn active" data-target="s7-view-infographic">🖼️ Infographic Poster</button>
+              <button class="subnav-btn" data-target="s7-view-domino">Domino Cascade</button>
+              <button class="subnav-btn" data-target="s7-view-matrix">Vulnerability Matrix (2x2)</button>
             </div>
           </div>
 
-          <!-- View A: Domino Cascade Simulator -->
-          <div id="s7-view-domino">
+          <!-- View A: HD Infographic Poster (Active Default) -->
+          <div class="infographic-frame" id="s7-view-infographic" style="height: 100%; min-height: 240px;" data-lightbox-src="assets/echo/7.jpg" data-lightbox-caption="PERSON 7: SWATHI — Challenges India Faces">
+            <img src="assets/echo/7.jpg" alt="Person 7 Infographic" class="infographic-img" />
+            <div class="infographic-overlay-hud">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="hud-chip">🖼️ PERSON 7 INFOGRAPHIC POSTER</span>
+                <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Swathi • Key Challenges</span>
+                <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">Trade Disruptions • Fiscal Pressure • Business Uncertainty</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- View B: Domino Cascade Simulator -->
+          <div id="s7-view-domino" style="display: none;">
             <div style="display: flex; justify-content: flex-end; margin-bottom: 6px;">
               <button class="hud-btn" id="btn-trigger-cascade" style="background: rgba(225,29,72,0.08); border-color: var(--color-crimson); color: var(--color-crimson); font-weight: 700; padding: 4px 10px; font-size: 0.72rem;">
                 ⚡ Run Domino Cascade
@@ -3762,12 +4324,20 @@
             </div>
           </div>
 
-          <!-- Informative Case Study: Fertilizer Disruption -->
+          <!-- Real-Time Case Study: Fertilizer Disruption & ₹45,000 Cr Sovereign Subsidy -->
           <div class="case-study-box gold" style="margin-top: 8px;">
-            <div class="case-study-tag">🌾 CASE STUDY • SUPPLY CHAIN RESILIENCE</div>
-            <div class="case-study-title">Eurasian Fertilizer & DAP Disruption: ₹45,000 Cr Subsidy Response</div>
+            <div class="case-study-tag">
+              <span class="case-study-live-pulse"></span>
+              <span>REAL-TIME CASE STUDY • SUPPLY CHAIN DISRUPTION &amp; FISCAL RESPONSE</span>
+            </div>
+            <div class="case-study-title">Eurasian Fertilizer &amp; DAP Disruption: ₹45,000 Cr Subsidy Shield (2022–2026)</div>
             <div class="case-study-desc">
-              When conflict halted Russian and Belarusian Muriate of Potash (MOP) and DAP shipments, the Indian government expanded the nutrient subsidy buffer by ₹45,000 Crore, partnered with Canadian and Jordanian state exporters, and scaled domestic nano-urea plants — protecting agricultural sowing without rural unrest.
+              When conflict halted Russian and Belarusian Muriate of Potash (MOP) and Diammonium Phosphate (DAP) shipments—which represent over 40% of India's fertilizer inputs—global prices doubled overnight. The Union Government absorbed the entire blow by boosting the nutrient-based fertilizer subsidy by ₹45,000 Crore, partnered with Canadian, Jordanian and Moroccan state exporters, and scaled domestic nano-urea plants, insulating Indian farmers and preventing agricultural food inflation.
+            </div>
+            <div class="case-study-metrics">
+              <span class="cs-metric-chip"><span class="val">40%+</span> Imported Fertilizer Need</span>
+              <span class="cs-metric-chip"><span class="val">₹45,000 Cr</span> Subsidy Absorption</span>
+              <span class="cs-metric-chip"><span class="val">Zero</span> Farm-Level Sowing Disruption</span>
             </div>
           </div>
 
@@ -3794,6 +4364,7 @@
           <span class="speaker-badge" style="color: var(--color-emerald); border-color: rgba(16,185,129,0.4);">
             <span class="dot" style="background: var(--color-emerald); box-shadow: 0 0 8px var(--color-emerald);"></span> PERSON 8: SUBHASHITA • SOLUTIONS &amp; RESILIENCE
           </span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/8.jpg', 'PERSON 8: SUBHASHITA — Solutions: How India Can Respond')">🖼️ View HD Infographic</button>
           <span class="slide-number">08 / 09</span>
         </div>
         <div class="slide-title-wrap">
@@ -3807,18 +4378,34 @@
         </div>
 
         <div class="slide-content-grid grid-macro">
-          <!-- The 4-Step Solution Framework & 3D SPR Caverns Infographic -->
+          <!-- The 4-Step Solution Framework & Infographic Poster -->
           <div class="glass-panel" style="background: rgba(255, 255, 255, 0.92); border-color: rgba(16,185,129,0.35);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
               <h3 style="font-size: 0.98rem; font-weight: 700; color: #0f172a;">Strategic Solutions Framework</h3>
               <div class="toggle-subnav" id="subnav-slide-8">
-                <button class="subnav-btn active" id="btn-view-s8-shield">4-Step Solutions</button>
-                <button class="subnav-btn" id="btn-view-s8-spr">3D SPR Caverns</button>
+                <button class="subnav-btn active" data-target="s8-view-infographic">🖼️ Infographic Poster</button>
+                <button class="subnav-btn" data-target="s8-view-shield">4-Step Solutions</button>
+                <button class="subnav-btn" data-target="s8-view-spr">3D SPR Caverns</button>
               </div>
             </div>
 
-            <!-- View A: 4 Core Solution Steps -->
-            <div class="solutions-4step-grid" id="s8-view-shield">
+            <!-- View A: HD Infographic Poster (Active Default) -->
+            <div class="infographic-frame" id="s8-view-infographic" style="height: 100%; min-height: 290px;" data-lightbox-src="assets/echo/8.jpg" data-lightbox-caption="PERSON 8: SUBHASHITA — Solutions: How India Can Respond">
+              <img src="assets/echo/8.jpg" alt="Person 8 Infographic" class="infographic-img" />
+              <div class="infographic-overlay-hud">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="hud-chip">🖼️ PERSON 8 INFOGRAPHIC POSTER</span>
+                  <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Subhashita • Solutions &amp; Resilience</span>
+                  <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">Diversify Trade • Domestic Capacity • Fiscal Shield</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View B: 4 Core Solution Steps -->
+            <div class="solutions-4step-grid" id="s8-view-shield" style="display: none;">
               <div class="solution-step-card active">
                 <span class="solution-step-num">Step 01: Trade Sourcing</span>
                 <div class="solution-step-title">🌍 Diversify Trade Partners</div>
@@ -3916,12 +4503,20 @@
               </div>
             </div>
 
-            <!-- Strategic Case Study Capsule -->
+            <!-- Real-Time Case Study: ISPRL Strategic Reserves & Local Currency Trade -->
             <div class="case-study-box emerald" style="margin-top: 8px;">
-              <div class="case-study-tag">🛡️ CASE STUDY • ENERGY SOVEREIGNTY</div>
-              <div class="case-study-title">ISPRL Underground Salt Caverns & Bilateral Trade (2024–2026)</div>
+              <div class="case-study-tag">
+                <span class="case-study-live-pulse"></span>
+                <span>REAL-TIME CASE STUDY • ENERGY SOVEREIGNTY &amp; CURRENCY ARBITRAGE</span>
+              </div>
+              <div class="case-study-title">India's 74-Day Energy Buffer &amp; Rupee-Dirham Settlement (2024–2026)</div>
               <div class="case-study-desc">
-                India developed 5.33 MMT of subterranean strategic crude caverns in Visakhapatnam, Mangalore, and Padur (covering 9.5 days requirement) supplemented by 64.5 days of OMC commercial reserves (~74 days total buffer). Paired with Rupee-Dirham local currency settlement (LCS) mechanisms, external financial and maritime embargoes are substantially neutralized.
+                India constructed 5.33 MMT of subterranean crude rock caverns in Visakhapatnam, Mangalore, and Padur (covering ~9.5 days requirement) bolstered by 64.5 days of OMC commercial inventory (~74 days total national shield). Concurrently, India established the Local Currency Settlement (LCS) system with the UAE, trading oil in Indian Rupees and UAE Dirhams to bypass SWIFT financial sanctions and insulate energy imports from global dollar shortages.
+              </div>
+              <div class="case-study-metrics">
+                <span class="cs-metric-chip"><span class="val">74-Day</span> Total Energy Shield</span>
+                <span class="cs-metric-chip"><span class="val">5.33 MMT</span> Underground SPR</span>
+                <span class="cs-metric-chip"><span class="val">INR-AED</span> Sanction-Resistant Trade</span>
               </div>
             </div>
 
@@ -3947,6 +4542,7 @@
       <section class="slide" id="slide-9" data-speaker="DIVYA" data-section="CONCLUSION">
         <div class="slide-meta-bar">
           <span class="speaker-badge"><span class="dot"></span> PERSON 9: DIVYA • CONCLUSION</span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/9.jpg', 'PERSON 9: DIVYA — Conclusion: Summarising the Impact of War on India')">🖼️ View HD Infographic</button>
           <span class="slide-number">09 / 09</span>
         </div>
         <div class="slide-title-wrap">
@@ -3960,13 +4556,29 @@
             <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px;">
               <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">Macroeconomic Shock Transmission Architecture</h3>
               <div class="toggle-subnav" id="subnav-slide-9">
-                <button class="subnav-btn active" id="btn-view-s9-orbit">9-Channel Orbit</button>
-                <button class="subnav-btn" id="btn-view-s9-heatmap">Transmission Heatmap</button>
+                <button class="subnav-btn active" data-target="s9-view-infographic">🖼️ Infographic Poster</button>
+                <button class="subnav-btn" data-target="s9-view-orbit">9-Channel Orbit</button>
+                <button class="subnav-btn" data-target="s9-view-heatmap">Transmission Heatmap</button>
               </div>
             </div>
 
-            <!-- View A: 9-Channel Interactive Orbit Visualizer -->
-            <div id="s9-view-orbit" style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+            <!-- View A: HD Infographic Poster (Active Default) -->
+            <div class="infographic-frame" id="s9-view-infographic" style="height: 100%; min-height: 290px;" data-lightbox-src="assets/echo/9.jpg" data-lightbox-caption="PERSON 9: DIVYA — Conclusion: Summarising the Impact of War on India">
+              <img src="assets/echo/9.jpg" alt="Person 9 Infographic" class="infographic-img" />
+              <div class="infographic-overlay-hud">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="hud-chip">🖼️ PERSON 9 INFOGRAPHIC POSTER</span>
+                  <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Divya • Executive Conclusion</span>
+                  <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">Multi-Channel Transmission Synthesis</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View B: 9-Channel Interactive Orbit Visualizer -->
+            <div id="s9-view-orbit" style="position: relative; width: 100%; height: 100%; display: none; align-items: center; justify-content: center;">
               <div class="master-matrix-wrap" id="master-matrix">
                 <!-- Central Shock Epicenter -->
                 <div class="matrix-center-node" id="matrix-center">
@@ -4131,6 +4743,23 @@
                 </p>
               </div>
 
+              <!-- Real-Time Case Study: India's 7.2%+ GDP Growth Decoupling -->
+              <div class="case-study-box indigo" style="margin-top: 8px; margin-bottom: 6px;">
+                <div class="case-study-tag">
+                  <span class="case-study-live-pulse"></span>
+                  <span>REAL-TIME CASE STUDY • MACRO DECOUPLING IN GLOBAL CRISIS</span>
+                </div>
+                <div class="case-study-title">India's 7.2%+ GDP Growth Decoupling (2023–2026)</div>
+                <div class="case-study-desc">
+                  Despite two simultaneous, high-intensity global conflicts in Europe and the Middle East that suppressed world GDP growth below 3%, India recorded 7.2%+ real economic growth. This resilience proved that external war shocks can be neutralized when anchored by a $650B+ foreign exchange fortress, bilateral non-dollar settlements, and self-reliant domestic capital markets.
+                </div>
+                <div class="case-study-metrics">
+                  <span class="cs-metric-chip"><span class="val">7.2%+</span> GDP Decoupling</span>
+                  <span class="cs-metric-chip"><span class="val">$650B+</span> Forex Fortress</span>
+                  <span class="cs-metric-chip"><span class="val">11.4 Months</span> Import Cover</span>
+                </div>
+              </div>
+
               <!-- Strong Final Line Quote Box -->
               <div style="background: linear-gradient(135deg, rgba(2,132,199,0.08), rgba(79,70,229,0.08)); border-left: 3px solid var(--color-cyan); padding: 10px 12px; border-radius: 6px; margin-top: 10px;">
                 <div style="font-size: 0.66rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; margin-bottom: 3px;">Strong Final Line • Person 9 (Divya)</div>
@@ -4198,6 +4827,64 @@
   </div>
 
   <!-- ==========================================================================
+       SPEAKER SCRIPT TELEPROMPTER DRAWER
+       ========================================================================== -->
+  <div class="speaker-drawer-backdrop" id="speaker-drawer-backdrop"></div>
+  <aside class="speaker-drawer" id="speaker-drawer" aria-label="Speaker Script Drawer">
+    <div class="drawer-header">
+      <div class="drawer-header-top">
+        <div class="drawer-title-group">
+          <span class="drawer-badge" id="drawer-badge">PERSON 1 • AMRUTHA</span>
+        </div>
+        <div class="drawer-tools">
+          <button class="drawer-tool-btn" id="btn-font-dec" title="Decrease Font Size">A−</button>
+          <button class="drawer-tool-btn" id="btn-font-inc" title="Increase Font Size">A+</button>
+          <button class="drawer-tool-btn" id="btn-copy-speech" title="Copy Current Speech to Clipboard">📋 Copy</button>
+          <button class="drawer-close-btn" id="btn-close-drawer" title="Close Drawer (Esc / N)">✕</button>
+        </div>
+      </div>
+      <div>
+        <div class="drawer-speaker-title" id="drawer-speaker-title">Introduction: The Battlefield of Money</div>
+        <div class="drawer-speaker-sub" id="drawer-speaker-sub">Active Presenter: Amrutha • Topic Module 01/09</div>
+      </div>
+    </div>
+
+    <div class="drawer-content" id="drawer-scroll-content">
+      <!-- Incoming Transition Card -->
+      <div class="drawer-card incoming" id="drawer-incoming-card">
+        <div class="drawer-card-label"><span>🎙️</span> <span>INCOMING HANDOFF CUE</span></div>
+        <div class="drawer-card-text" id="drawer-incoming-text">Opening speaker introducing the 9-member team and presentation topic.</div>
+      </div>
+
+      <!-- Spoken Script Card -->
+      <div class="drawer-card" style="border-top: 3px solid var(--color-cyan);">
+        <div class="drawer-card-label" style="color: var(--color-cyan); margin-bottom: 8px;">
+          <span>🗣️</span> <span>EXACT SPOKEN SCRIPT (WORD-FOR-WORD)</span>
+        </div>
+        <div class="drawer-speech-body" id="drawer-speech-body">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+
+      <!-- Outgoing Handoff Card -->
+      <div class="drawer-card outgoing" id="drawer-outgoing-card">
+        <div class="drawer-card-label"><span>🔄</span> <span>OUTGOING HANDOFF CUE (PASS TO NEXT SPEAKER)</span></div>
+        <div class="drawer-card-text" id="drawer-outgoing-text">(Person 2): "Now that we understand how war can reach India, let’s see how it affects our daily expenses, prices, and currency."</div>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="drawer-footer-nav">
+        <button class="drawer-footer-btn" id="drawer-btn-prev">◀ Prev</button>
+        <button class="drawer-footer-btn" id="drawer-btn-next">Next ▶</button>
+      </div>
+      <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #64748b;" id="drawer-timer-est">
+        ⏱ ~60–80s Speaking Time
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
        KEYBOARD SHORTCUTS MODAL
        ========================================================================== -->
   <div class="modal-backdrop" id="modal-shortcuts">
@@ -4211,6 +4898,10 @@
         <tr style="border-bottom: 1px solid rgba(203,213,225,0.7);">
           <td style="padding: 8px 0; font-family: var(--font-mono); color: var(--color-cyan); font-weight: 700;">← / Wheel Up</td>
           <td style="padding: 8px 0;">Return to previous section</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(203,213,225,0.7);">
+          <td style="padding: 8px 0; font-family: var(--font-mono); color: var(--color-cyan); font-weight: 700;">N / T</td>
+          <td style="padding: 8px 0;">Toggle Speaker Teleprompter / Notes Drawer</td>
         </tr>
         <tr style="border-bottom: 1px solid rgba(203,213,225,0.7);">
           <td style="padding: 8px 0; font-family: var(--font-mono); color: var(--color-cyan); font-weight: 700;">Home / End</td>
@@ -4353,18 +5044,325 @@
       let isTransitioning = false;
       let autoPlayInterval = null;
 
+      /* --- 3. Enhanced Speaker Dossier & Script Engine --- */
       const speakerDossier = [
-        { speaker: 'EXECUTIVE COUNCIL', topic: 'HOW WAR AFFECTS THE INDIAN ECONOMY & FINANCIAL SYSTEM' },
-        { speaker: 'PERSON 1: AMRUTHA', topic: 'INTRODUCTION: WHAT IS WAR & THE BATTLEFIELD OF MONEY' },
-        { speaker: 'PERSON 2: JASWANTH', topic: 'HOW WAR HITS OUR WALLET: PRICES & CURRENCY' },
-        { speaker: 'PERSON 3: PREM', topic: 'HOW WAR MEETS THE MARKET' },
-        { speaker: 'PERSON 4: SRIKAR', topic: 'STOCK MARKET UNDER PRESSURE: SENSEX & NIFTY 50' },
-        { speaker: 'PERSON 5: PRASANNA', topic: 'IMPACT OF WAR ON THE INDIAN ECONOMY' },
-        { speaker: 'PERSON 6: HAVILA', topic: 'HOW WAR AFFECTS THE GOVERNMENT & ITS RESPONSE' },
-        { speaker: 'PERSON 7: SWATHI', topic: 'CHALLENGES INDIA FACES' },
-        { speaker: 'PERSON 8: SUBHASHITA', topic: 'SOLUTIONS: HOW INDIA CAN RESPOND' },
-        { speaker: 'PERSON 9: DIVYA', topic: 'CONCLUSION: SUMMARISING THE IMPACT ON INDIA' }
+        {
+          id: 0,
+          speaker: 'EXECUTIVE COUNCIL',
+          presenterName: 'Team Overview',
+          topic: 'How War Affects the Indian Economy & Financial System',
+          incomingCue: 'Beginning of Presentation • Executive Council Briefing',
+          speechHtml: `
+            <p><strong>Good afternoon everyone.</strong></p>
+            <p>We are here to present our topic: <strong>'How War Affects the Indian Economy and its financial system'</strong>.</p>
+            <p>Before we start, let me introduce our team. We are a <strong>team of 9 members</strong>, and each of us will explain a different part of the topic.</p>
+            <div class="quote-block">
+              “When we hear the word war, the first things that come to our mind are soldiers, weapons and destruction. But there is another battlefield that we often don't see — <strong>the battlefield of money</strong>.”
+            </div>
+            <p>Advance to Slide 1 for Person 1 (Amrutha) to begin the introductory thesis.</p>
+          `,
+          speechRaw: `Good afternoon everyone. We are here to present our topic 'How War Affects the Indian Economy and its financial system'. Before we start, let me introduce our team. We are a team of 9 members, and each of us will explain a different part of the topic.`,
+          outgoingCue: 'Advancing to Person 1 (Amrutha) for Topic Introduction'
+        },
+        {
+          id: 1,
+          speaker: 'PERSON 1: AMRUTHA',
+          presenterName: 'Amrutha',
+          topic: 'Introduction: What is War & The Battlefield of Money',
+          incomingCue: 'Opening speaker introducing the 9-member team and presentation topic.',
+          speechHtml: `
+            <p><strong>Good afternoon everyone.</strong></p>
+            <p>We are here to present our topic <strong>'How War Affects the Indian Economy and its financial system'</strong>.</p>
+            <p>Before we start, let me introduce our team. We are a <strong>team of 9 members</strong>, and each of us will explain a different part of the topic.</p>
+            <p>Before we go into the main topic, let me give you a simple introduction about what is war:</p>
+            <div class="quote-block">
+              “When we hear the word war, the first things that come to our mind are <strong>soldiers, weapons and destruction</strong>.<br><br>
+              But there is another battlefield that we often don't see — <strong>the battlefield of money</strong>.<br><br>
+              Today, countries are deeply connected. India buys from other countries, sells to them, and does business with people and companies around the world.<br><br>
+              So when a war happens somewhere, the impact doesn't always stop at the battlefield. It can travel through the connections between countries and <strong>eventually reach India</strong>.”
+            </div>
+            <p>Think of it like this: A war starts in one part of the world… but its consequences can travel much farther. And that is exactly what we are going to explore today — <strong>how a war outside India can create effects inside India's financial system</strong>.</p>
+            <p>So, instead of looking at war only as a military event, let's look at it as a <strong>financial shock that can travel from one country to another</strong>.</p>
+            <div class="quote-block">
+              “The battlefield may be far away… but the impact can reach our pockets, our businesses and our country.”
+            </div>
+            <p>“So, let's see how this happens.”</p>
+          `,
+          speechRaw: `Good afternoon everyone. We are here to present our topic 'How War Affects the Indian Economy and its financial system'. Before we start, let me introduce our team. We are a team of 9 members, and each of us will explain a different part of the topic. Before we go into the main topic, let me give you a simple introduction about what is war: “When we hear the word war, the first things that come to our mind are soldiers, weapons and destruction. But there is another battlefield that we often don't see — the battlefield of money. Today, countries are deeply connected. India buys from other countries, sells to them, and does business with people and companies around the world. So when a war happens somewhere, the impact doesn't always stop at the battlefield. It can travel through the connections between countries and eventually reach India. Think of it like this: A war starts in one part of the world… but its consequences can travel much farther. And that is exactly what we are going to explore today — how a war outside India can create effects inside India's financial system. So, instead of looking at war only as a military event, let's look at it as a financial shock that can travel from one country to another.” “The battlefield may be far away… but the impact can reach our pockets, our businesses and our country.” “So, let's see how this happens.”`,
+          outgoingCue: '(Person 2): "Now that we understand how war can reach India, let’s see how it affects our daily expenses, prices, and currency. Person 2 : How war Hits our wallet"'
+        },
+        {
+          id: 2,
+          speaker: 'PERSON 2: JASWANTH',
+          presenterName: 'Jaswanth',
+          topic: 'How War Hits Our Wallet – Prices & Currency',
+          incomingCue: '(Person 2): "Now that we understand how war can reach India, let’s see how it affects our daily expenses, prices, and currency. Person 2 : How war Hits our wallet"',
+          speechHtml: `
+            <p><strong>Good afternoon everyone.</strong></p>
+            <p>Today, I am going to speak about <strong>“How War Hits Our Wallet – The Impact of War on Prices and Currency.”</strong></p>
+            <p>When we think about war, we think about destruction and loss of lives. But war also affects the economy and our daily expenses.</p>
+            <p><strong>First, war can disrupt the supply of oil, food, and raw materials.</strong> When supply decreases, prices usually increase.</p>
+            <p>For India, this is important because we import a <strong>large amount of crude oil</strong>. Higher oil prices can increase transportation and production costs, which can make everyday products more expensive.</p>
+            <p><strong>War can also cause inflation.</strong> Inflation means prices increase and the purchasing power of our money decreases. For example, <strong>₹1,000 may buy fewer things than before</strong>.</p>
+            <p>Another major impact is on the <strong>Indian rupee</strong>. During uncertainty, investors often prefer safer currencies like the US dollar. This can weaken the rupee and make imports more expensive.</p>
+            <div class="quote-block">
+              <strong>So, the simple chain is:</strong><br>
+              War → Supply disruption → Higher prices → Inflation → Rupee pressure → Higher import costs → Impact on our wallet.
+            </div>
+            <p>Therefore, even a war far away from India can affect us through fuel prices, food prices, inflation, and the value of our currency.</p>
+            <p><strong>Thank you.</strong></p>
+          `,
+          speechRaw: `Good afternoon everyone. Today, I am going to speak about “How War Hits Our Wallet – The Impact of War on Prices and Currency.” When we think about war, we think about destruction and loss of lives. But war also affects the economy and our daily expenses. First, war can disrupt the supply of oil, food, and raw materials. When supply decreases, prices usually increase. For India, this is important because we import a large amount of crude oil. Higher oil prices can increase transportation and production costs, which can make everyday products more expensive. War can also cause inflation. Inflation means prices increase and the purchasing power of our money decreases. For example, ₹1,000 may buy fewer things than before. Another major impact is on the Indian rupee. During uncertainty, investors often prefer safer currencies like the US dollar. This can weaken the rupee and make imports more expensive. So, the simple chain is: War → Supply disruption → Higher prices → Inflation → Rupee pressure → Higher import costs → Impact on our wallet. Therefore, even a war far away from India can affect us through fuel prices, food prices, inflation, and the value of our currency. Thank you.`,
+          outgoingCue: '(Person 3): "We have seen how war reaches our wallets through prices and the rupee. Now, let’s look at how these changes affect the market."'
+        },
+        {
+          id: 3,
+          speaker: 'PERSON 3: PREM',
+          presenterName: 'Prem',
+          topic: 'How War Meets the Market',
+          incomingCue: '(Person 3): "We have seen how war reaches our wallets through prices and the rupee. Now, let’s look at how these changes affect the market."',
+          speechHtml: `
+            <p>Wars can create <strong>short-term uncertainty and sharp market swings</strong>. India is particularly exposed when conflict disrupts oil supplies, because higher import costs can affect inflation, the rupee and company profits.</p>
+            <p>• <strong>High volatility:</strong> News about conflict, oil supply or possible escalation can quickly change investor expectations, causing prices to swing sharply.</p>
+            <p>• <strong>Rising crude oil prices:</strong> Supply disruptions or fears of disruption can push oil prices up. For India, this can raise the import bill and costs for fuel, transport and businesses, while adding inflation pressure.</p>
+            <p>• <strong>Rupee depreciation:</strong> Higher oil-import costs increase demand for dollars; during periods of global uncertainty, investors may also seek dollar assets. These pressures can weaken the rupee, although RBI action may help smooth abrupt movements.</p>
+            <p>• <strong>Movement towards gold and the US dollar:</strong> Investors may shift some money into assets they consider safer during uncertainty. This can support gold and the dollar, while reducing demand for riskier assets such as shares.</p>
+            <p>• <strong>Stock-market volatility:</strong> Investors may sell shares or delay buying when uncertainty rises. Oil-sensitive businesses can face higher costs, while the wider market may react to weaker sentiment and concerns about inflation and economic growth.</p>
+          `,
+          speechRaw: `Wars can create short-term uncertainty and sharp market swings. India is particularly exposed when conflict disrupts oil supplies, because higher import costs can affect inflation, the rupee and company profits. High volatility: News about conflict, oil supply or possible escalation can quickly change investor expectations, causing prices to swing sharply. Rising crude oil prices: Supply disruptions or fears of disruption can push oil prices up. For India, this can raise the import bill and costs for fuel, transport and businesses, while adding inflation pressure. Rupee depreciation: Higher oil-import costs increase demand for dollars; during periods of global uncertainty, investors may also seek dollar assets. These pressures can weaken the rupee, although RBI action may help smooth abrupt movements. Movement towards gold and the US dollar: Investors may shift some money into assets they consider safer during uncertainty. This can support gold and the dollar, while reducing demand for riskier assets such as shares. Stock-market volatility: Investors may sell shares or delay buying when uncertainty rises. Oil-sensitive businesses can face higher costs, while the wider market may react to weaker sentiment and concerns about inflation and economic growth.`,
+          outgoingCue: '(Person 4): "We’ve seen the wider market reactions to war. Now, let’s focus on the Indian stock market, especially the Sensex and Nifty 50."'
+        },
+        {
+          id: 4,
+          speaker: 'PERSON 4: SRIKAR',
+          presenterName: 'Srikar',
+          topic: 'Stock Market Under Pressure – Sensex & Nifty 50',
+          incomingCue: '(Person 4): "We’ve seen the wider market reactions to war. Now, let’s focus on the Indian stock market, especially the Sensex and Nifty 50."',
+          speechHtml: `
+            <p><strong>Good afternoon, ladies and gentlemen.</strong></p>
+            <p>So far, we have seen how wars affect different sectors and the Indian economy. Now, let's step into the shoes of investors and look at their impact on the Indian stock market - <strong>Sensex and Nifty 50</strong>.</p>
+            <p>To begin with, the most immediate impact is <strong>market volatility</strong>. Geopolitical uncertainty creates fear, leading to sudden selling. For example, when the Russia-Ukraine conflict began in February 2022, the <strong>Sensex fell by over 2,700 points in a single session</strong>.</p>
+            <p>Moving from market sentiment to capital flows, <strong>foreign investment can also decline</strong>. FPIs may withdraw money from emerging markets and move towards safer assets, putting pressure on Indian stocks and the rupee.</p>
+            <p>But the biggest concern for India is <strong>crude oil</strong>. Higher oil prices increase our import bill, inflation and production costs. At the same time, a weaker rupee makes these imports even more expensive.</p>
+            <p>Beyond oil, wars can also affect global trade, disrupting supply chains and increasing freight costs and delivery times.</p>
+            <p>However, the impact is <strong>not equal across sectors</strong>. Aviation and automobiles may face higher costs, while <strong>defence, metals and upstream oil companies may benefit</strong>.</p>
+            <div class="quote-block">
+              “War creates the shock, but <strong>economic fundamentals determine its duration and ultimate impact</strong> on the Indian stock market.”
+            </div>
+            <p><strong>Thank you.</strong></p>
+          `,
+          speechRaw: `Good afternoon, ladies and gentlemen. So far, we have seen how wars affect different sectors and the Indian economy. Now, let's step into the shoes of investors and look at their impact on the Indian stock market - Sensex and Nifty 50. To begin with, the most immediate impact is market volatility. Geopolitical uncertainty creates fear, leading to sudden selling. For example, when the Russia-Ukraine conflict began in February 2022, the Sensex fell by over 2,700 points in a single session. Moving from market sentiment to capital flows, foreign investment can also decline. FPIs may withdraw money from emerging markets and move towards safer assets, putting pressure on Indian stocks and the rupee. But the biggest concern for India is crude oil. Higher oil prices increase our import bill, inflation and production costs. At the same time, a weaker rupee makes these imports even more expensive. Beyond oil, wars can also affect global trade, disrupting supply chains and increasing freight costs and delivery times. However, the impact is not equal across sectors. Aviation and automobiles may face higher costs, while defence, metals and upstream oil companies may benefit. So, to conclude: "War creates the shock, but economic fundamentals determine its duration and ultimate impact on the Indian stock market." Thank you.`,
+          outgoingCue: '(Person 5): "The stock market is only one part of the picture. Let’s now see how these effects spread to the Indian economy and people’s livelihoods."'
+        },
+        {
+          id: 5,
+          speaker: 'PERSON 5: PRASANNA',
+          presenterName: 'Prasanna',
+          topic: 'Impact of War on the Indian Economy',
+          incomingCue: '(Person 5): "The stock market is only one part of the picture. Let’s now see how these effects spread to the Indian economy and people’s livelihoods."',
+          speechHtml: `
+            <p><strong>Good afternoon everyone.</strong></p>
+            <p>Today, I am going to speak about the <strong>impact of war on the Indian economy</strong>.</p>
+            <p>War affects India in many ways:</p>
+            <p>• First, it can lead to <strong>unemployment</strong>, as businesses may face difficulties and reduce job opportunities.</p>
+            <p>• Second, war can cause <strong>lower economic growth</strong>, affecting the country's development.</p>
+            <p>• Third, it can <strong>increase food prices</strong>, making daily life difficult for ordinary people.</p>
+            <p>• War can also <strong>disturb international trade</strong> and create shortages of essential goods.</p>
+            <p>As a result, <strong>poor and middle-class families may face more financial problems</strong>.</p>
+            <div class="quote-block">
+              “To conclude, war not only destroys lives but also affects a country's economic development and people's living standards.”
+            </div>
+            <p><strong>Thank you.</strong></p>
+          `,
+          speechRaw: `Good afternoon everyone. Today, I am going to speak about the impact of war on the Indian economy. War affects India in many ways. First, it can lead to unemployment, as businesses may face difficulties and reduce job opportunities. Second, war can cause lower economic growth, affecting the country's development. Third, it can increase food prices, making daily life difficult for ordinary people. War can also disturb international trade and create shortages of essential goods. As a result, poor and middle-class families may face more financial problems. To conclude, war not only destroys lives but also affects a country's economic development and people's living standards. Thank you.`,
+          outgoingCue: '(Person 6): "We’ve seen how war affects jobs, prices, trade, and growth. Now, let’s understand what the Indian government does in response."'
+        },
+        {
+          id: 6,
+          speaker: 'PERSON 6: HAVILA',
+          presenterName: 'Havila',
+          topic: 'How War Affects the Government & Its Response',
+          incomingCue: '(Person 6): "We’ve seen how war affects jobs, prices, trade, and growth. Now, let’s understand what the Indian government does in response."',
+          speechHtml: `
+            <p><strong>Good afternoon, everyone.</strong></p>
+            <p>As you have already heard from my teammates, this war has affected India's market, banking sector, and economy. Now, let me explain another important aspect: <strong>the impact of the war on the Indian government and its response</strong>.</p>
+            <p>India has many citizens working on ships around the world. In fact, <strong>roughly one out of every ten seafarers globally is Indian</strong>. Seafarers are people who work on ships, such as sailors and marine engineers.</p>
+            <p>Imagine going to work on a ship and suddenly finding yourself in a war zone. You are not a soldier, but your life is still in danger.</p>
+            <p>Indian sailors have been affected by attacks on commercial ships. This creates a major responsibility for the Indian government: <strong>protecting its citizens, raising concerns with the countries involved, and condemning attacks on commercial vessels</strong>.</p>
+            <div class="quote-block">
+              <strong>India also supported a three-part peace proposal to reduce the dangers of the war:</strong><br>
+              1. Stop attacks on energy facilities and important infrastructure.<br>
+              2. Keep Black Sea ports open so essential goods, such as grain and energy, can move safely.<br>
+              3. Stop attacks on commercial ships travelling through the Black Sea.
+            </div>
+            <p>In simple words, India wanted to protect important facilities, maintain the movement of essential goods, and make shipping safer.</p>
+            <p>Another major concern is <strong>India's economic stability</strong>. India depends on international shipping for oil and other essential goods. When shipping routes become unsafe, supplies can be disrupted and transportation costs can rise, putting additional pressure on the government.</p>
+            <div class="quote-block">
+              “To conclude, the war has challenged the Indian government in three major areas: <strong>protecting Indian citizens, maintaining diplomatic relations, and safeguarding economic interests</strong>. This shows that even when a war happens thousands of kilometres away, its consequences can still reach India, and the government must respond.”
+            </div>
+            <p><strong>Thank you.</strong></p>
+          `,
+          speechRaw: `Good afternoon, everyone. As you have already heard from my teammates, this war has affected India's market, banking sector, and economy. Now, let me explain another important aspect: the impact of the war on the Indian government and its response. India has many citizens working on ships around the world. In fact, roughly one out of every ten seafarers globally is Indian. Seafarers are people who work on ships, such as sailors and marine engineers. Imagine going to work on a ship and suddenly finding yourself in a war zone. You are not a soldier, but your life is still in danger. Indian sailors have been affected by attacks on commercial ships. This creates a major responsibility for the Indian government: protecting its citizens, raising concerns with the countries involved, and condemning attacks on commercial vessels. India also supported a three-part peace proposal to reduce the dangers of the war. First, stop attacks on energy facilities and important infrastructure. Second, keep Black Sea ports open so essential goods, such as grain and energy, can move safely. Third, stop attacks on commercial ships travelling through the Black Sea. In simple words, India wanted to protect important facilities, maintain the movement of essential goods, and make shipping safer. Another major concern is India's economic stability. India depends on international shipping for oil and other essential goods. When shipping routes become unsafe, supplies can be disrupted and transportation costs can rise, putting additional pressure on the government. To conclude, the war has challenged the Indian government in three major areas: protecting Indian citizens, maintaining diplomatic relations, and safeguarding economic interests. This shows that even when a war happens thousands of kilometres away, its consequences can still reach India, and the government must respond. Thank you.`,
+          outgoingCue: '(Person 7): "The government’s response shows how serious these effects can be. Next, let’s look at the major challenges India faces because of war."'
+        },
+        {
+          id: 7,
+          speaker: 'PERSON 7: SWATHI',
+          presenterName: 'Swathi',
+          topic: 'Challenges India Faces',
+          incomingCue: '(Person 7): "The government’s response shows how serious these effects can be. Next, let’s look at the major challenges India faces because of war."',
+          speechHtml: `
+            <p>Now that we have seen how war affects different parts of the financial system, let us look at the major challenges India may face.</p>
+            <p><strong>The first challenge is international trade disruption.</strong> During a war, trade routes and the supply of raw materials can be affected. This can create difficulties for Indian industries that depend on imports.</p>
+            <p><strong>The second challenge is pressure on government finances.</strong> The government may need to spend more on defence and national security while continuing to invest in education, healthcare and development.</p>
+            <p><strong>The third challenge is business uncertainty.</strong> When global conditions become unpredictable, companies may postpone investments and expansion plans, which can affect employment and economic growth.</p>
+            <div class="quote-block">
+              “So, the impact of war goes beyond financial markets. It can also affect India's industries, government priorities and future development.<br><br>
+              Now, let us look at how India can respond to these challenges and build a stronger, more resilient economy.”
+            </div>
+          `,
+          speechRaw: `Now that we have seen how war affects different parts of the financial system, let us look at the major challenges India may face. The first challenge is international trade disruption. During a war, trade routes and the supply of raw materials can be affected. This can create difficulties for Indian industries that depend on imports. The second challenge is pressure on government finances. The government may need to spend more on defence and national security while continuing to invest in education, healthcare and development. The third challenge is business uncertainty. When global conditions become unpredictable, companies may postpone investments and expansion plans, which can affect employment and economic growth. So, the impact of war goes beyond financial markets. It can also affect India's industries, government priorities and future development. Now, let us look at how India can respond to these challenges and build a stronger, more resilient economy.`,
+          outgoingCue: '(Person 8): "Now that we understand the challenges, let’s explore the steps India can take to reduce these risks and build resilience."'
+        },
+        {
+          id: 8,
+          speaker: 'PERSON 8: SUBHASHITA',
+          presenterName: 'Subhashita',
+          topic: 'Solutions: How India Can Respond',
+          incomingCue: '(Person 8): "Now that we understand the challenges, let’s explore the steps India can take to reduce these risks and build resilience."',
+          speechHtml: `
+            <p><strong>The first step is to diversify our trade partners.</strong> India should avoid depending too much on a single country for important goods and raw materials. By having alternative sources, we can reduce the risk of supply disruptions.</p>
+            <p><strong>The second step is to strengthen domestic manufacturing.</strong> By producing more essential goods within India, we can reduce external dependence, support Indian industries and create employment opportunities.</p>
+            <p><strong>The third step is to maintain fiscal discipline.</strong> During a crisis, the government may need to spend more on defence and other essential needs. However, this spending must be carefully planned so that long-term development is not affected.</p>
+            <p><strong>Finally, India should focus on long-term economic resilience.</strong> This means improving infrastructure, strengthening important industries and preparing for future global uncertainties.</p>
+            <div class="quote-block">
+              “To conclude, India may not be able to control global conflicts, but it can prepare itself to face their economic consequences.<br><br>
+              <strong>A strong economy is not one that never faces challenges, but one that can withstand them and recover.</strong>”
+            </div>
+          `,
+          speechRaw: `The first step is to diversify our trade partners. India should avoid depending too much on a single country for important goods and raw materials. By having alternative sources, we can reduce the risk of supply disruptions. The second step is to strengthen domestic manufacturing. By producing more essential goods within India, we can reduce external dependence, support Indian industries and create employment opportunities. The third step is to maintain fiscal discipline. During a crisis, the government may need to spend more on defence and other essential needs. However, this spending must be carefully planned so that long-term development is not affected. Finally, India should focus on long-term economic resilience. This means improving infrastructure, strengthening important industries and preparing for future global uncertainties. To conclude, India may not be able to control global conflicts, but it can prepare itself to face their economic consequences. A strong economy is not one that never faces challenges, but one that can withstand them and recover.`,
+          outgoingCue: '(Person 9): "These solutions show how India can prepare for future uncertainty. Finally, let’s bring together the key points of our presentation."'
+        },
+        {
+          id: 9,
+          speaker: 'PERSON 9: DIVYA',
+          presenterName: 'Divya',
+          topic: 'Conclusion: Summarising the Impact',
+          incomingCue: '(Person 9): "These solutions show how India can prepare for future uncertainty. Finally, let’s bring together the key points of our presentation."',
+          speechHtml: `
+            <p><strong>Finally, I would like to conclude our presentation by summarising the impact of wars on India and its financial economy:</strong></p>
+            <p>• War is not only a military issue. It can become an <strong>economic and financial issue</strong>.</p>
+            <p>• It can affect <strong>markets, prices, currency, banks, government spending and economic growth</strong>.</p>
+            <p>• India cannot control wars in other countries, but it can <strong>prepare itself to handle their effects</strong>.</p>
+            <p>• A <strong>strong financial system, diversified trade and a resilient economy</strong> can reduce the impact.</p>
+            <div class="quote-block" style="border-left-color: var(--color-gold); background: rgba(180, 83, 9, 0.08);">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-gold); font-weight: 800; text-transform: uppercase;">Strong Final Line:</span><br>
+              <strong style="font-size: 1.05rem; color: #0f172a;">“We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”</strong>
+            </div>
+          `,
+          speechRaw: `Finally, I would like to conclude our presentation by summarising the impact of wars on India and its financial economy: War is not only a military issue. It can become an economic and financial issue. It can affect markets, prices, currency, banks, government spending and economic growth. India cannot control wars in other countries, but it can prepare itself to handle their effects. A strong financial system, diversified trade and a resilient economy can reduce the impact. Strong final line: “We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”`,
+          outgoingCue: 'Final Line Delivered. Presentation Concluded.'
+        }
       ];
+
+      /* --- Teleprompter / Speaker Drawer Controller --- */
+      const speakerDrawer = document.getElementById('speaker-drawer');
+      const speakerDrawerBackdrop = document.getElementById('speaker-drawer-backdrop');
+      const btnToggleNotes = document.getElementById('btn-toggle-notes');
+      const btnCloseDrawer = document.getElementById('btn-close-drawer');
+      const drawerBadge = document.getElementById('drawer-badge');
+      const drawerSpeakerTitle = document.getElementById('drawer-speaker-title');
+      const drawerSpeakerSub = document.getElementById('drawer-speaker-sub');
+      const drawerIncomingText = document.getElementById('drawer-incoming-text');
+      const drawerSpeechBody = document.getElementById('drawer-speech-body');
+      const drawerOutgoingText = document.getElementById('drawer-outgoing-text');
+      const drawerBtnPrev = document.getElementById('drawer-btn-prev');
+      const drawerBtnNext = document.getElementById('drawer-btn-next');
+      const btnFontDec = document.getElementById('btn-font-dec');
+      const btnFontInc = document.getElementById('btn-font-inc');
+      const btnCopySpeech = document.getElementById('btn-copy-speech');
+      const notesCurrentSpeaker = document.getElementById('notes-current-speaker');
+
+      let currentFontSize = 0.94; // rem
+
+      function renderSpeakerDrawer(idx) {
+        const item = speakerDossier[idx] || speakerDossier[0];
+        if (drawerBadge) drawerBadge.textContent = item.speaker;
+        if (drawerSpeakerTitle) drawerSpeakerTitle.textContent = item.topic;
+        if (drawerSpeakerSub) drawerSpeakerSub.textContent = `Active Presenter: ${item.presenterName} • Slide 0${idx}/09`;
+        if (drawerIncomingText) drawerIncomingText.textContent = item.incomingCue;
+        if (drawerSpeechBody) drawerSpeechBody.innerHTML = item.speechHtml;
+        if (drawerOutgoingText) drawerOutgoingText.textContent = item.outgoingCue;
+        if (notesCurrentSpeaker) notesCurrentSpeaker.textContent = item.presenterName;
+      }
+
+      function toggleSpeakerDrawer() {
+        if (!speakerDrawer) return;
+        const isOpen = speakerDrawer.classList.contains('open');
+        if (isOpen) {
+          speakerDrawer.classList.remove('open');
+          if (speakerDrawerBackdrop) speakerDrawerBackdrop.classList.remove('open');
+        } else {
+          renderSpeakerDrawer(currentSlideIdx);
+          speakerDrawer.classList.add('open');
+          if (speakerDrawerBackdrop) speakerDrawerBackdrop.classList.add('open');
+          playChime(660, 0.1);
+        }
+      }
+
+      function closeSpeakerDrawer() {
+        if (speakerDrawer) speakerDrawer.classList.remove('open');
+        if (speakerDrawerBackdrop) speakerDrawerBackdrop.classList.remove('open');
+      }
+
+      if (btnToggleNotes) btnToggleNotes.addEventListener('click', toggleSpeakerDrawer);
+      if (btnCloseDrawer) btnCloseDrawer.addEventListener('click', closeSpeakerDrawer);
+      if (speakerDrawerBackdrop) speakerDrawerBackdrop.addEventListener('click', closeSpeakerDrawer);
+
+      if (drawerBtnPrev) {
+        drawerBtnPrev.addEventListener('click', () => {
+          prevSlide();
+          renderSpeakerDrawer(currentSlideIdx);
+        });
+      }
+      if (drawerBtnNext) {
+        drawerBtnNext.addEventListener('click', () => {
+          nextSlide();
+          renderSpeakerDrawer(currentSlideIdx);
+        });
+      }
+
+      if (btnFontDec && drawerSpeechBody) {
+        btnFontDec.addEventListener('click', () => {
+          if (currentFontSize > 0.75) {
+            currentFontSize -= 0.08;
+            drawerSpeechBody.style.fontSize = currentFontSize + 'rem';
+          }
+        });
+      }
+      if (btnFontInc && drawerSpeechBody) {
+        btnFontInc.addEventListener('click', () => {
+          if (currentFontSize < 1.4) {
+            currentFontSize += 0.08;
+            drawerSpeechBody.style.fontSize = currentFontSize + 'rem';
+          }
+        });
+      }
+
+      if (btnCopySpeech) {
+        btnCopySpeech.addEventListener('click', () => {
+          const item = speakerDossier[currentSlideIdx];
+          if (item && item.speechRaw) {
+            navigator.clipboard.writeText(item.speechRaw).then(() => {
+              const origText = btnCopySpeech.textContent;
+              btnCopySpeech.textContent = '✅ Copied!';
+              setTimeout(() => { btnCopySpeech.textContent = origText; }, 1800);
+            }).catch(() => {
+              btnCopySpeech.textContent = '✅ Copied!';
+            });
+          }
+        });
+      }
 
       function updateSlideUI(idx) {
         slides.forEach((s, i) => {
@@ -4390,6 +5388,9 @@
         if (hudSpeakerPill) {
           hudSpeakerPill.textContent = `SPEAKER: ${speakerInfo.speaker}`;
         }
+
+        // Real-time Speaker Script Drawer sync
+        renderSpeakerDrawer(idx);
       }
 
       function goToSlide(targetIdx, withCurtain = true) {
@@ -4491,6 +5492,16 @@
             break;
           case 'KeyM':
             if (soundToggleBtn) soundToggleBtn.click();
+            break;
+          case 'KeyN':
+          case 'KeyT':
+            toggleSpeakerDrawer();
+            break;
+          case 'Escape':
+            closeSpeakerDrawer();
+            if (modalShortcuts) modalShortcuts.classList.remove('open');
+            const modalLightbox = document.getElementById('modal-lightbox');
+            if (modalLightbox) modalLightbox.classList.remove('open');
             break;
         }
       });
@@ -5092,12 +6103,42 @@
         modalLightbox.classList.remove('open');
       }
 
+      window.openLightbox = openLightbox;
+      window.closeLightbox = closeLightbox;
+
       document.querySelectorAll('.infographic-frame').forEach(frame => {
         frame.addEventListener('click', (e) => {
           if (e.target.closest('.hud-hotspot')) return;
           const src = frame.dataset.lightboxSrc;
           const caption = frame.dataset.lightboxCaption;
           if (src) openLightbox(src, caption);
+        });
+      });
+
+      // Universal Subnav Switcher for all slides
+      document.querySelectorAll('.toggle-subnav').forEach(subnav => {
+        const buttons = subnav.querySelectorAll('.subnav-btn');
+        buttons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const targetId = btn.dataset.target;
+            if (!targetId) return;
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Find all targets controlled by this subnav
+            const allTargetIds = Array.from(buttons).map(b => b.dataset.target).filter(Boolean);
+            allTargetIds.forEach(id => {
+              const el = document.getElementById(id);
+              if (el) {
+                if (id === targetId) {
+                  el.style.display = (el.classList.contains('infographic-frame') || el.classList.contains('chart-canvas-wrap')) ? 'flex' : 'block';
+                } else {
+                  el.style.display = 'none';
+                }
+              }
+            });
+            playChime(520, 0.08);
+          });
         });
       });
 
@@ -5113,6 +6154,7 @@
           closeLightbox();
           if (modalShortcuts) modalShortcuts.classList.remove('open');
           if (finalCinemaModal) finalCinemaModal.classList.remove('active');
+          closeSpeakerDrawer();
         }
       });
 
