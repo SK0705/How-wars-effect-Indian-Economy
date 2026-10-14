@@ -54,8 +54,8 @@ Each team member delivers a dedicated module addressing an integral dimension of
 | **Person 6: Havila** | `slide-6` | **Government Response & Maritime Security** | Indian seafarers (1 in 10 globally), Black Sea/Red Sea security, 3-point peace proposal. |
 | **Person 7: Swathi** | `slide-7` | **Core Strategic Challenges** | Import reliance, fiscal balancing (defence vs social welfare), corporate capex freezes. |
 | **Person 8: Subhashita** | `slide-8` | **Solutions & Resilience Playbook** | Trade diversification, domestic manufacturing (Make in India), fiscal discipline. |
-| **Person 9: Lokesh** | `slide-9` | **Synthesis & Grand Conclusion** | Systemic recap, resilience over prevention, final strategic statement. |
-| **Person 10: Divya** | `slide-10` | **Final Strategic Wrap-Up** | Closing summary, resilience through preparedness, final strategic message. |
+| **Person 9: Lokesh** | `slide-9` | **Long-Term Impacts of War on India** | Lasting household-cost, investment, fiscal, trade and energy-security effects. |
+| **Person 10: Divya** | `slide-10` | **Conclusion and Final Wrap-Up** | Synthesizes the presentation and delivers the final preparedness message. |
 
 ---
 
@@ -205,22 +205,25 @@ The presentation script is organized sequentially to provide smooth handoffs bet
   > To conclude, India may not be able to control global conflicts, but it can prepare itself to face their economic consequences.  
   > **A strong economy is not one that never faces challenges, but one that can withstand them and recover.**"*
 - **Handoff Cue to Person 9:**  
-  > *(Person 9): "These solutions show how India can prepare for future uncertainty. Finally, let’s bring together the key points of our presentation."*
+  > *(Person 9): "These solutions help India prepare for future uncertainty. Lokesh will now discuss the long-term impacts war can have on India."*
 
 ---
 
-### 🎙️ Person 9: Lokesh — Conclusion: Summarising the Impact
+### 🎙️ Person 9: Lokesh — Long-Term Impacts of War on India
 - **Slide Reference:** `slide-9`
-- **Topic:** Summary of Impact on India & Final Strategic Line
+- **Topic:** Lasting effects on households, investment, public finances, trade and energy security
 - **Core Speech:**
-  > *"Finally, I would like to conclude our presentation by summarising the impact of wars on India and its financial economy:  
-  > - War is not only a military issue. It can become an economic and financial issue.  
-  > - It can affect markets, prices, currency, banks, government spending and economic growth.  
-  > - India cannot control wars in other countries, but it can prepare itself to handle their effects.  
-  > - A strong financial system, diversified trade and a resilient economy can reduce the impact.  
-  > 
-  > **Strong final line:**  
-  > > **“We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”**"*
+  > *"War's effects can continue long after the fighting ends. For India, household costs may remain under pressure as energy, freight and input prices affect purchasing power, especially for lower-income families. Uncertainty and higher costs can delay business investment, slow hiring and weaken productivity over time. Defence, relief and subsidy spending can compete with long-term priorities such as infrastructure, health and education. Disruptions can also reshape supplier relationships and increase the need to diversify imports and build domestic capacity. The costs can outlast the conflict, influencing household budgets, public priorities and the direction of investment."*
+- **Handoff Cue to Person 10:**  
+  > *(Person 10): "These long-term impacts show why preparedness matters. Divya will now conclude our presentation and bring together its central message."*
+
+---
+
+### 🎙️ Person 10: Divya — Conclusion and Final Wrap-Up
+- **Slide Reference:** `slide-10`
+- **Core Speech:**
+  > *"To conclude, war affects India beyond the battlefield and can shape households, businesses, markets and public finances. We have seen how these effects travel through prices, energy, trade, currency, investment and government priorities, and how some consequences can last for years. India cannot prevent every global conflict, but it can limit the damage through a strong financial system, diversified trade, domestic capacity and careful policy planning. Preparedness helps protect people's livelihoods today while supporting a more resilient economy for the future.  
+  > **“We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”**"*
 
 ---
 
@@ -245,7 +248,7 @@ An interactive presentation deck is located in this directory, built with vanill
 
 ### 🌟 Deck Capabilities
 - **Cinematic Prologue (`slide-0`):** Multi-scene opening transition animating the global conflict transmission map into the Indian subcontinent.
-- **Dedicated Speaker Modules (`slide-1` to `slide-9`):** 1:1 alignment with each presenter's speaking topic, complete with speaker identity chips and timer readouts.
+- **Dedicated Speaker Modules (`slide-1` to `slide-10`):** 1:1 alignment with each presenter's speaking topic, complete with speaker identity chips and timer readouts.
 - **Interactive Macro Visuals:**
   - Interactive Wallet Impact Flowchart (`slide-2`)
   - Live Multi-Asset Historical Trend Canvas (`slide-3`)
