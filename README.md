@@ -1,7 +1,7 @@
 # How War Affects the Indian Economy and Its Financial System
 
 > **Executive Macroeconomic Intelligence Briefing & Interactive Presentation Deck**  
-> *A collaborative 9-member team research presentation exploring how distant geopolitical conflicts create profound transmission shocks across India's financial architecture, markets, currency, government priorities, and household wallets.*
+> *A collaborative 10-member team research presentation exploring how distant geopolitical conflicts create profound transmission shocks across India's financial architecture, markets, currency, government priorities, and household wallets.*
 
 ---
 
@@ -40,7 +40,7 @@ flowchart TD
 
 ---
 
-## 👥 9-Member Team Speaker Matrix
+## 👥 10-Member Team Speaker Matrix
 
 Each team member delivers a dedicated module addressing an integral dimension of the macroeconomic chain, complete with transitions and analytical takeaways:
 
@@ -54,7 +54,8 @@ Each team member delivers a dedicated module addressing an integral dimension of
 | **Person 6: Havila** | `slide-6` | **Government Response & Maritime Security** | Indian seafarers (1 in 10 globally), Black Sea/Red Sea security, 3-point peace proposal. |
 | **Person 7: Swathi** | `slide-7` | **Core Strategic Challenges** | Import reliance, fiscal balancing (defence vs social welfare), corporate capex freezes. |
 | **Person 8: Subhashita** | `slide-8` | **Solutions & Resilience Playbook** | Trade diversification, domestic manufacturing (Make in India), fiscal discipline. |
-| **Person 9: Divya** | `slide-9` | **Synthesis & Grand Conclusion** | Systemic recap, resilience over prevention, final strategic statement. |
+| **Person 9: Lokesh** | `slide-9` | **Synthesis & Grand Conclusion** | Systemic recap, resilience over prevention, final strategic statement. |
+| **Person 10: Divya** | `slide-10` | **Final Strategic Wrap-Up** | Closing summary, resilience through preparedness, final strategic message. |
 
 ---
 
@@ -69,7 +70,7 @@ The presentation script is organized sequentially to provide smooth handoffs bet
 - **Opening Speech:**
   > *"Good morning everyone.  
   > We are here to present our topic 'How War Affects the Indian Economy and its financial system'.  
-  > Before we start, let me introduce our team. We are a team of 9 members, and each of us will explain a different part of the topic. Before we go into the main topic, let me give you a simple introduction about what is war:  
+  > Before we start, let me introduce our team. We are a team of 10 members, and each of us will explain a different part of the topic. Before we go into the main topic, let me give you a simple introduction about what is war:
   > “When we hear the word war, the first things that come to our mind are soldiers, weapons and destruction.  
   > But there is another battlefield that we often don't see — **the battlefield of money**. Today, countries are deeply connected. India buys from other countries, sells to them, and does business with people and companies around the world.  
   > So when a war happens somewhere, the impact doesn't always stop at the battlefield. It can travel through the connections between countries and eventually reach India.  
@@ -208,7 +209,7 @@ The presentation script is organized sequentially to provide smooth handoffs bet
 
 ---
 
-### 🎙️ Person 9: Divya — Conclusion: Summarising the Impact
+### 🎙️ Person 9: Lokesh — Conclusion: Summarising the Impact
 - **Slide Reference:** `slide-9`
 - **Topic:** Summary of Impact on India & Final Strategic Line
 - **Core Speech:**
@@ -297,5 +298,5 @@ d:/PPT/
 ## 🎓 Academic / Institutional Citation
 
 - **Topic:** How War Affects the Indian Economy and Its Financial System
-- **Presentation Format:** 9-Member Collaborative Economic Intelligence Briefing
+- **Presentation Format:** 10-Member Collaborative Economic Intelligence Briefing
 - **Research Scope:** Macroeconomics, Geopolitical Risk Transmission, Crude Oil Dynamics, FX & Monetary Policy (RBI), Equity Sectoral Analysis (BSE/NSE).
