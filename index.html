@@ -118,15 +118,14 @@
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-            <p><strong>Good morning everyone.</strong></p>
+      border: 1px solid rgba(203, 213, 225, 0.9);
+      display: flex;
       color: #0f172a;
-            <p>Before we start, let me introduce our team. We are a <strong>team of 10 members</strong>, and each of us will explain a different part of the topic.</p>
       align-items: center;
       justify-content: center;
       cursor: pointer;
       z-index: 100;
       transition: all var(--transition-fast);
-          speechRaw: `Good morning everyone. We are here to present our topic 'How War Affects the Indian Economy and its financial system'. Before we start, let me introduce our team. We are a team of 10 members, and each of us will explain a different part of the topic.`,
       opacity: 0.4;
     }
 
@@ -134,11 +133,8 @@
       opacity: 1;
       background: #ffffff;
       color: var(--color-cyan);
-          incomingCue: 'Opening speaker introducing the 10-member team and presentation topic.',
       transform: translateY(-50%) scale(1.08);
-            <p><strong>Good morning everyone.</strong></p>
     }
-            <p>Before we start, let me introduce our team. We are a <strong>team of 10 members</strong>, and each of us will explain a different part of the topic.</p>
     .edge-prev {
       left: 12px;
       border-radius: 12px;
@@ -1076,12 +1072,15 @@
     }
 
     .scene-quote-sub {
+      width: min(90%, 1200px);
       font-family: var(--font-sans);
       font-size: clamp(1rem, 1.4vw, 1.4rem);
       font-weight: 600;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
       color: var(--color-cyan);
       margin-top: 22px;
+      text-align: center;
       text-transform: uppercase;
       text-shadow: 0 2px 10px rgba(2, 132, 199, 0.2);
     }
@@ -2166,6 +2165,33 @@
       pointer-events: auto;
     }
 
+    .final-priority-card {
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .final-priority-card:hover,
+    .final-priority-card[aria-pressed="true"] {
+      border-color: var(--color-cyan) !important;
+      box-shadow: 0 5px 14px rgba(2, 132, 199, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .final-priority-card:focus-visible {
+      outline: 3px solid var(--color-cyan);
+      outline-offset: 2px;
+    }
+
+    .final-priority-feedback {
+      min-height: 2.8em;
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      line-height: 1.4;
+    }
+
     .final-quote-text {
       font-family: var(--font-display);
       font-size: clamp(2rem, 3.4vw, 3.6rem);
@@ -2294,6 +2320,7 @@
       .channel-card .details h4 { font-size: 0.78rem; margin-bottom: 2px; }
       .channel-card .details p { font-size: 0.68rem; line-height: 1.25; }
       .sankey-canvas-wrap { height: 260px; }
+    }
     /* ==========================================================================
        15. TOP CONTROLS & SPEAKER SCRIPT TELEPROMPTER DRAWER
        ========================================================================== */
@@ -4817,19 +4844,20 @@
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
-              <div style="background: rgba(15,23,42,0.04); border: 1px solid rgba(148,163,184,0.25); border-radius: 10px; padding: 12px;">
+              <button type="button" class="final-priority-card" data-priority="financial" aria-pressed="false" style="background: rgba(15,23,42,0.04); border: 1px solid rgba(148,163,184,0.25); border-radius: 10px; padding: 12px;">
                 <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 700;">1. Financial System</div>
                 <div style="font-size: 0.82rem; color: #0f172a; line-height: 1.45;">A strong banking system and deep capital markets ensure India absorbs shocks without collapsing under pressure.</div>
-              </div>
-              <div style="background: rgba(15,23,42,0.04); border: 1px solid rgba(148,163,184,0.25); border-radius: 10px; padding: 12px;">
+              </button>
+              <button type="button" class="final-priority-card" data-priority="trade" aria-pressed="false" style="background: rgba(15,23,42,0.04); border: 1px solid rgba(148,163,184,0.25); border-radius: 10px; padding: 12px;">
                 <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 700;">2. Trade Diversity</div>
                 <div style="font-size: 0.82rem; color: #0f172a; line-height: 1.45;">Diversifying suppliers and strengthening domestic manufacturing reduce exposure to a single geopolitical disruption.</div>
-              </div>
-              <div style="background: rgba(15,23,42,0.04); border: 1px solid rgba(148,163,184,0.25); border-radius: 10px; padding: 12px;">
+              </button>
+              <button type="button" class="final-priority-card" data-priority="resilience" aria-pressed="false" style="background: rgba(15,23,42,0.04); border: 1px solid rgba(148,163,184,0.25); border-radius: 10px; padding: 12px;">
                 <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 700;">3. Economic Resilience</div>
                 <div style="font-size: 0.82rem; color: #0f172a; line-height: 1.45;">Robust infrastructure, strategic reserves, and policy agility help the country recover faster and recover stronger.</div>
-              </div>
+              </button>
             </div>
+            <p class="final-priority-feedback" id="final-priority-feedback" role="status" aria-live="polite">Select a priority to see how it can strengthen India’s response.</p>
 
             <div style="background: linear-gradient(135deg, rgba(2,132,199,0.08), rgba(79,70,229,0.08)); border-left: 3px solid var(--color-cyan); padding: 12px 14px; border-radius: 8px;">
               <div style="font-size: 0.68rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; margin-bottom: 4px;">Closing Message</div>
@@ -4994,7 +5022,7 @@
           <td style="padding: 8px 0; font-family: var(--font-mono); color: var(--color-cyan); font-weight: 700;">M</td>
           <td style="padding: 8px 0;">Toggle subtle synthesized audio cues</td>
         </tr>
-      </table>morning
+      </table>
       <div style="margin-top: 18px; text-align: right;">
         <button class="hud-btn" id="btn-close-modal" style="display: inline-block;">Got It</button>
       </div>
@@ -5660,7 +5688,7 @@
         } else {
           clearInterval(cineTimer);
         }
-      }, 3200);
+      }, 5000);
 
       // Quick tap or click on prologue container advances scenes to roster
       const cineWrap = document.querySelector('.cinematic-container');
@@ -5923,6 +5951,25 @@
           finalCinemaModal.classList.remove('active');
         });
       }
+
+      const finalPriorityCards = document.querySelectorAll('.final-priority-card');
+      const finalPriorityFeedback = document.getElementById('final-priority-feedback');
+      const finalPriorityMessages = {
+        financial: 'Financial system selected: strong banks and deep capital markets help absorb shocks.',
+        trade: 'Trade diversity selected: alternative suppliers and local production reduce dependence on disrupted routes.',
+        resilience: 'Economic resilience selected: strategic reserves and adaptable policy support recovery.'
+      };
+
+      finalPriorityCards.forEach(card => {
+        card.addEventListener('click', () => {
+          finalPriorityCards.forEach(option => option.setAttribute('aria-pressed', 'false'));
+          card.setAttribute('aria-pressed', 'true');
+          if (finalPriorityFeedback) {
+            finalPriorityFeedback.textContent = finalPriorityMessages[card.dataset.priority];
+          }
+          playChime(560, 0.1);
+        });
+      });
 
       /* --- 13. Shortcuts Modal Handlers --- */
       const modalShortcuts = document.getElementById('modal-shortcuts');
