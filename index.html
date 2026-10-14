@@ -118,15 +118,15 @@
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(203, 213, 225, 0.9);
+            <p><strong>Good morning everyone.</strong></p>
       color: #0f172a;
-      display: flex;
+            <p>Before we start, let me introduce our team. We are a <strong>team of 10 members</strong>, and each of us will explain a different part of the topic.</p>
       align-items: center;
       justify-content: center;
       cursor: pointer;
       z-index: 100;
       transition: all var(--transition-fast);
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+          speechRaw: `Good morning everyone. We are here to present our topic 'How War Affects the Indian Economy and its financial system'. Before we start, let me introduce our team. We are a team of 10 members, and each of us will explain a different part of the topic.`,
       opacity: 0.4;
     }
 
@@ -134,11 +134,11 @@
       opacity: 1;
       background: #ffffff;
       color: var(--color-cyan);
-      border-color: var(--color-cyan);
+          incomingCue: 'Opening speaker introducing the 10-member team and presentation topic.',
       transform: translateY(-50%) scale(1.08);
-      box-shadow: 0 10px 28px rgba(2, 132, 199, 0.2);
+            <p><strong>Good morning everyone.</strong></p>
     }
-
+            <p>Before we start, let me introduce our team. We are a <strong>team of 10 members</strong>, and each of us will explain a different part of the topic.</p>
     .edge-prev {
       left: 12px;
       border-radius: 12px;
@@ -2624,7 +2624,7 @@
   <!-- Top Action Controls: Executive Shortcuts Guide -->
   <div class="deck-top-actions">
     <span class="afternoon-session-badge">
-      <span style="font-size: 0.85rem;">☀️</span> AFTERNOON EXECUTIVE SESSION
+      <span style="font-size: 0.85rem;">☀️</span> MORNING EXECUTIVE SESSION
     </span>
     <button class="top-action-btn icon-only" id="btn-shortcuts" title="Keyboard Shortcuts (?)" aria-label="Shortcuts">
       <span>⌨️</span>
@@ -2656,14 +2656,14 @@
             <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1240px; gap: 32px; text-align: left;">
               <div style="flex: 1.25;">
                 <span class="brand-pill" style="margin-bottom: 16px; border-color: rgba(2, 132, 199, 0.4); color: var(--color-cyan); font-weight: 700; background: rgba(255,255,255,0.9);">
-                  AFTERNOON EXECUTIVE BRIEFING • 9-MEMBER TEAM PRESENTATION
+                  MORNING EXECUTIVE BRIEFING • 10-MEMBER TEAM PRESENTATION
                 </span>
                 <h1 class="scene-quote" style="text-align: left; font-size: clamp(1.9rem, 3vw, 3rem);">
                   WHEN WE HEAR THE WORD WAR,<br />
                   <span style="font-size: 0.75em; font-weight: 600; color: #334155; -webkit-text-fill-color: initial;">we think of soldiers, weapons and destruction.</span><br />
                   <span class="highlight-word gold" style="display:inline-block; margin-top: 10px;">BUT THERE IS ANOTHER BATTLEFIELD: THE BATTLEFIELD OF MONEY.</span>
                 </h1>
-                <div class="scene-quote-sub" style="text-align: left; margin: 12px 0 20px 0;">Good afternoon everyone • Topic Introduction</div>
+                <div class="scene-quote-sub" style="text-align: left; margin: 12px 0 20px 0;">Good morning everyone • Topic Introduction</div>
                 <div style="display: flex; gap: 12px; align-items: center;">
                   <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/0.jpg', 'PROLOGUE KEYNOTE: War Does Not Need to Cross Our Border to Reach Us — Macroeconomic Shock Transmission')" style="padding: 7px 16px; font-size: 0.8rem;">
                     🖼️ View 4K Keynote Strategic Poster
@@ -2747,17 +2747,17 @@
             <div class="scene-quote-sub">A war starts in one part of the world… but consequences reach India's financial system</div>
           </div>
 
-          <!-- Scene 4: Main Title & 9-Member Reveal -->
+          <!-- Scene 4: Main Title & 10-Member Reveal -->
           <div class="cine-scene" id="cine-scene-4">
             <div style="max-width: 950px; margin-bottom: 16px;">
-              <span class="speaker-badge" style="margin-bottom: 10px; background: rgba(255,255,255,0.9);"><span class="dot"></span> 9-MEMBER TEAM PRESENTATION</span>
+              <span class="speaker-badge" style="margin-bottom: 10px; background: rgba(255,255,255,0.9);"><span class="dot"></span> 10-MEMBER TEAM PRESENTATION</span>
               <h1 class="slide-title" style="font-size: clamp(2.2rem, 3.8vw, 3.6rem); line-height: 1.15; margin-bottom: 6px;">
                 HOW WAR AFFECTS<br />
                 <span class="highlight-word gold">THE INDIAN ECONOMY</span><br />
                 <span style="font-size: clamp(1.2rem, 2.2vw, 1.8rem); color: #1e3a8a; font-family: var(--font-sans); font-weight: 800; display: block; margin-top: 4px;">&amp; ITS FINANCIAL SYSTEM</span>
               </h1>
               <p class="slide-subtitle" style="margin: 6px auto 14px auto; font-size: 0.95rem; max-width: 860px; line-height: 1.45;">
-                "Instead of looking at war only as a military event, let's look at it as a financial shock that can travel from one country to another. We are a team of 9 members, and each of us will explain a different part of the topic."
+                "Instead of looking at war only as a military event, let's look at it as a financial shock that can travel from one country to another. We are a team of 10 members, and each of us will explain a different part of the topic."
               </p>
             </div>
 
@@ -2767,7 +2767,7 @@
               </button>
             </div>
 
-            <!-- 9-Member Roster -->
+            <!-- 10-Member Roster -->
             <div class="team-reveal-grid" id="team-roster">
               <div class="team-member-card" style="transition-delay: 40ms;">
                 <div class="team-avatar am">AM</div>
@@ -2802,8 +2802,12 @@
                 <div><div class="team-name">Person 8: Subhashita</div><div class="team-role">Solutions: How India Can Respond</div></div>
               </div>
               <div class="team-member-card" style="transition-delay: 360ms;">
+                <div class="team-avatar lo">LO</div>
+                <div><div class="team-name">Person 9: Lokesh</div><div class="team-role">Conclusion: Summarising the Impact</div></div>
+              </div>
+              <div class="team-member-card" style="transition-delay: 400ms;">
                 <div class="team-avatar di">DI</div>
-                <div><div class="team-name">Person 9: Divya</div><div class="team-role">Conclusion: Summarising the Impact</div></div>
+                <div><div class="team-name">Person 10: Divya</div><div class="team-role">Final Strategic Wrap-Up</div></div>
               </div>
             </div>
 
@@ -4537,13 +4541,13 @@
       </section>
 
       <!-- ====================================================================
-           SLIDE 09: DIVYA — CONCLUSION: SUMMARISING THE ECONOMIC IMPACT
+           SLIDE 09: LOKESH — CONCLUSION: SUMMARISING THE ECONOMIC IMPACT
            ==================================================================== -->
-      <section class="slide" id="slide-9" data-speaker="DIVYA" data-section="CONCLUSION">
+      <section class="slide" id="slide-9" data-speaker="LOKESH" data-section="CONCLUSION">
         <div class="slide-meta-bar">
-          <span class="speaker-badge"><span class="dot"></span> PERSON 9: DIVYA • CONCLUSION</span>
-          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/9.jpg', 'PERSON 9: DIVYA — Conclusion: Summarising the Impact of War on India')">🖼️ View HD Infographic</button>
-          <span class="slide-number">09 / 09</span>
+          <span class="speaker-badge"><span class="dot"></span> PERSON 9: LOKESH • CONCLUSION</span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/9.png', 'PERSON 9: LOKESH — Conclusion: Summarising the Impact of War on India')">🖼️ View HD Infographic</button>
+          <span class="slide-number">09 / 10</span>
         </div>
         <div class="slide-title-wrap">
           <h2 class="slide-title">Conclusion: Summarising the Impact of War on India</h2>
@@ -4563,15 +4567,15 @@
             </div>
 
             <!-- View A: HD Infographic Poster (Active Default) -->
-            <div class="infographic-frame" id="s9-view-infographic" style="height: 100%; min-height: 290px;" data-lightbox-src="assets/echo/9.jpg" data-lightbox-caption="PERSON 9: DIVYA — Conclusion: Summarising the Impact of War on India">
-              <img src="assets/echo/9.jpg" alt="Person 9 Infographic" class="infographic-img" />
+            <div class="infographic-frame" id="s9-view-infographic" style="height: 100%; min-height: 290px;" data-lightbox-src="assets/echo/9.png" data-lightbox-caption="PERSON 9: LOKESH — Conclusion: Summarising the Impact of War on India">
+              <img src="assets/echo/9.png" alt="Person 9 Infographic" class="infographic-img" />
               <div class="infographic-overlay-hud">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                   <span class="hud-chip">🖼️ PERSON 9 INFOGRAPHIC POSTER</span>
                   <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                  <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Divya • Executive Conclusion</span>
+                  <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Lokesh • Executive Conclusion</span>
                   <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">Multi-Channel Transmission Synthesis</span>
                 </div>
               </div>
@@ -4724,7 +4728,7 @@
             <div>
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                 <span class="speaker-badge" style="color: var(--color-gold); border-color: var(--color-gold-glow); font-size: 0.65rem;">EXECUTIVE SUMMARY</span>
-                <span class="brand-pill">PERSON 9 (DIVYA)</span>
+                <span class="brand-pill">PERSON 9 (LOKESH)</span>
               </div>
 
               <h3 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 8px;">
@@ -4740,6 +4744,13 @@
                 </p>
                 <p>
                   3. <strong>The Three Absorbers:</strong> A strong financial system, diversified trade and a resilient economy can reduce the impact.
+                </p>
+              </div>
+
+              <div style="background: rgba(2, 132, 199, 0.08); border-left: 3px solid var(--color-cyan); padding: 8px 12px; border-radius: 6px; margin-top: 10px;">
+                <div style="font-size: 0.66rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; margin-bottom: 3px;">Strong Final Line • Person 9 (Lokesh)</div>
+                <p style="font-size: 0.82rem; color: #0f172a; line-height: 1.4; font-weight: 700; font-style: italic;">
+                  “We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”
                 </p>
               </div>
 
@@ -4762,7 +4773,7 @@
 
               <!-- Strong Final Line Quote Box -->
               <div style="background: linear-gradient(135deg, rgba(2,132,199,0.08), rgba(79,70,229,0.08)); border-left: 3px solid var(--color-cyan); padding: 10px 12px; border-radius: 6px; margin-top: 10px;">
-                <div style="font-size: 0.66rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; margin-bottom: 3px;">Strong Final Line • Person 9 (Divya)</div>
+                <div style="font-size: 0.66rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; margin-bottom: 3px;">Strong Final Line • Person 9 (Lokesh)</div>
                 <p style="font-size: 0.82rem; color: #0f172a; line-height: 1.4; font-weight: 700; font-style: italic;">
                   “We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”
                 </p>
@@ -4778,6 +4789,74 @@
         </div>
       </section>
 
+      <!-- ====================================================================
+           SLIDE 10: DIVYA — FINAL STRATEGIC WRAP-UP
+           ==================================================================== -->
+      <section class="slide" id="slide-10" data-speaker="DIVYA" data-section="FINAL WRAP-UP">
+        <div class="slide-meta-bar">
+          <span class="speaker-badge"><span class="dot"></span> PERSON 10: DIVYA • FINAL WRAP-UP</span>
+          <button class="infographic-pill-btn" onclick="openLightbox('assets/echo/10.jpg', 'PERSON 10: DIVYA — Final Strategic Wrap-Up')">🖼️ View HD Infographic</button>
+          <span class="slide-number">10 / 10</span>
+        </div>
+        <div class="slide-title-wrap">
+          <h2 class="slide-title">Final Strategic Wrap-Up: Preparing India for War’s Financial Impact</h2>
+          <p class="slide-subtitle">“We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”</p>
+        </div>
+
+        <div class="slide-content-grid grid-macro">
+          <div class="glass-panel" style="display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 20px;">
+            <div class="case-study-box indigo" style="margin-top: 0;">
+              <div class="case-study-tag">
+                <span class="case-study-live-pulse"></span>
+                <span>FINAL MESSAGE • PERSON 10 (DIVYA)</span>
+              </div>
+              <div class="case-study-title">India’s Resilience Is Built Through Preparedness</div>
+              <div class="case-study-desc">
+                War is not only a military issue — it is a macroeconomic and financial shock that affects prices, imported energy, capital flows, banking stress, and government priorities. India cannot stop all external shocks, but it can cushion them through a strong financial system, diversified trade, resilient supply chains, and effective policy response.
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+              <div style="background: rgba(15,23,42,0.04); border: 1px solid rgba(148,163,184,0.25); border-radius: 10px; padding: 12px;">
+                <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 700;">1. Financial System</div>
+                <div style="font-size: 0.82rem; color: #0f172a; line-height: 1.45;">A strong banking system and deep capital markets ensure India absorbs shocks without collapsing under pressure.</div>
+              </div>
+              <div style="background: rgba(15,23,42,0.04); border: 1px solid rgba(148,163,184,0.25); border-radius: 10px; padding: 12px;">
+                <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 700;">2. Trade Diversity</div>
+                <div style="font-size: 0.82rem; color: #0f172a; line-height: 1.45;">Diversifying suppliers and strengthening domestic manufacturing reduce exposure to a single geopolitical disruption.</div>
+              </div>
+              <div style="background: rgba(15,23,42,0.04); border: 1px solid rgba(148,163,184,0.25); border-radius: 10px; padding: 12px;">
+                <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 700;">3. Economic Resilience</div>
+                <div style="font-size: 0.82rem; color: #0f172a; line-height: 1.45;">Robust infrastructure, strategic reserves, and policy agility help the country recover faster and recover stronger.</div>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, rgba(2,132,199,0.08), rgba(79,70,229,0.08)); border-left: 3px solid var(--color-cyan); padding: 12px 14px; border-radius: 8px;">
+              <div style="font-size: 0.68rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; margin-bottom: 4px;">Closing Message</div>
+              <p style="font-size: 0.9rem; color: #0f172a; line-height: 1.45; font-weight: 700; font-style: italic; margin: 0;">
+                “We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”
+              </p>
+            </div>
+          </div>
+
+          <div class="glass-panel" style="display: flex; flex-direction: column; justify-content: center; padding: 14px;">
+            <div class="infographic-frame" id="s10-view-infographic" style="height: 100%; min-height: 320px;" data-lightbox-src="assets/echo/10.jpg" data-lightbox-caption="PERSON 10: DIVYA — Final Strategic Wrap-Up">
+              <img src="assets/echo/10.jpg" alt="Person 10 Infographic" class="infographic-img" />
+              <div class="infographic-overlay-hud">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="hud-chip">🖼️ PERSON 10 INFOGRAPHIC POSTER</span>
+                  <span class="hud-chip" style="background: rgba(15,23,42,0.85); color: #fff; cursor: pointer;">🔍 Click to Zoom 4K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <span style="font-size: 0.72rem; color: #fff; font-family: var(--font-mono); text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Divya • Final Strategic Wrap-Up</span>
+                  <span style="font-size: 0.72rem; color: #fbbf24; font-family: var(--font-mono); font-weight: 700;">Preparedness & Resilience</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   </main>
 
@@ -4787,7 +4866,7 @@
   <div class="final-cinema-overlay" id="final-cinema-modal">
     <div style="max-width: 950px; text-align: center;">
       <div style="font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.25em; color: var(--color-gold); margin-bottom: 16px; text-transform: uppercase;">
-        EXECUTIVE CONCLUSION • 9-MEMBER TEAM PRESENTATION
+        EXECUTIVE CONCLUSION • 10-MEMBER TEAM PRESENTATION
       </div>
 
       <div style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.2vw, 3.4rem); font-weight: 800; color: #ffffff; line-height: 1.25; margin-bottom: 18px; text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
@@ -4798,9 +4877,9 @@
         War is not only a military issue — it is an economic and financial shock affecting markets, prices, currency, banks, government spending and economic growth. A strong financial system, diversified trade and a resilient economy reduce the impact.
       </div>
 
-      <!-- 9-Member Team Roll -->
+      <!-- 10-Member Team Roll -->
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; font-size: 0.8rem; color: rgba(255,255,255,0.8); margin-bottom: 24px; font-family: var(--font-mono);">
-        <span>01 Amrutha</span> • <span>02 Jaswanth</span> • <span>03 Prem</span> • <span>04 Srikar</span> • <span>05 Prasanna</span> • <span>06 Havila</span> • <span>07 Swathi</span> • <span>08 Subhashita</span> • <span>09 Divya</span>
+        <span>01 Amrutha</span> • <span>02 Jaswanth</span> • <span>03 Prem</span> • <span>04 Srikar</span> • <span>05 Prasanna</span> • <span>06 Havila</span> • <span>07 Swathi</span> • <span>08 Subhashita</span> • <span>09 Lokesh</span> • <span>10 Divya</span>
       </div>
 
       <div style="display: flex; justify-content: center; gap: 24px; margin-top: 10px;">
@@ -4845,7 +4924,7 @@
       </div>
       <div>
         <div class="drawer-speaker-title" id="drawer-speaker-title">Introduction: The Battlefield of Money</div>
-        <div class="drawer-speaker-sub" id="drawer-speaker-sub">Active Presenter: Amrutha • Topic Module 01/09</div>
+        <div class="drawer-speaker-sub" id="drawer-speaker-sub">Active Presenter: Amrutha • Topic Module 01/10</div>
       </div>
     </div>
 
@@ -4853,7 +4932,7 @@
       <!-- Incoming Transition Card -->
       <div class="drawer-card incoming" id="drawer-incoming-card">
         <div class="drawer-card-label"><span>🎙️</span> <span>INCOMING HANDOFF CUE</span></div>
-        <div class="drawer-card-text" id="drawer-incoming-text">Opening speaker introducing the 9-member team and presentation topic.</div>
+        <div class="drawer-card-text" id="drawer-incoming-text">Opening speaker introducing the 10-member team and presentation topic.</div>
       </div>
 
       <!-- Spoken Script Card -->
@@ -4915,7 +4994,7 @@
           <td style="padding: 8px 0; font-family: var(--font-mono); color: var(--color-cyan); font-weight: 700;">M</td>
           <td style="padding: 8px 0;">Toggle subtle synthesized audio cues</td>
         </tr>
-      </table>
+      </table>morning
       <div style="margin-top: 18px; text-align: right;">
         <button class="hud-btn" id="btn-close-modal" style="display: inline-block;">Got It</button>
       </div>
@@ -5053,15 +5132,15 @@
           topic: 'How War Affects the Indian Economy & Financial System',
           incomingCue: 'Beginning of Presentation • Executive Council Briefing',
           speechHtml: `
-            <p><strong>Good afternoon everyone.</strong></p>
+            <p><strong>Good morning everyone.</strong></p>
             <p>We are here to present our topic: <strong>'How War Affects the Indian Economy and its financial system'</strong>.</p>
-            <p>Before we start, let me introduce our team. We are a <strong>team of 9 members</strong>, and each of us will explain a different part of the topic.</p>
+            <p>Before we start, let me introduce our team. We are a <strong>team of 10 members</strong>, and each of us will explain a different part of the topic.</p>
             <div class="quote-block">
               “When we hear the word war, the first things that come to our mind are soldiers, weapons and destruction. But there is another battlefield that we often don't see — <strong>the battlefield of money</strong>.”
             </div>
             <p>Advance to Slide 1 for Person 1 (Amrutha) to begin the introductory thesis.</p>
           `,
-          speechRaw: `Good afternoon everyone. We are here to present our topic 'How War Affects the Indian Economy and its financial system'. Before we start, let me introduce our team. We are a team of 9 members, and each of us will explain a different part of the topic.`,
+          speechRaw: `Good morning everyone. We are here to present our topic 'How War Affects the Indian Economy and its financial system'. Before we start, let me introduce our team. We are a team of 10 members, and each of us will explain a different part of the topic.`,
           outgoingCue: 'Advancing to Person 1 (Amrutha) for Topic Introduction'
         },
         {
@@ -5069,11 +5148,11 @@
           speaker: 'PERSON 1: AMRUTHA',
           presenterName: 'Amrutha',
           topic: 'Introduction: What is War & The Battlefield of Money',
-          incomingCue: 'Opening speaker introducing the 9-member team and presentation topic.',
+          incomingCue: 'Opening speaker introducing the 10-member team and presentation topic.',
           speechHtml: `
-            <p><strong>Good afternoon everyone.</strong></p>
+            <p><strong>Good morning everyone.</strong></p>
             <p>We are here to present our topic <strong>'How War Affects the Indian Economy and its financial system'</strong>.</p>
-            <p>Before we start, let me introduce our team. We are a <strong>team of 9 members</strong>, and each of us will explain a different part of the topic.</p>
+            <p>Before we start, let me introduce our team. We are a <strong>team of 10 members</strong>, and each of us will explain a different part of the topic.</p>
             <p>Before we go into the main topic, let me give you a simple introduction about what is war:</p>
             <div class="quote-block">
               “When we hear the word war, the first things that come to our mind are <strong>soldiers, weapons and destruction</strong>.<br><br>
@@ -5088,7 +5167,7 @@
             </div>
             <p>“So, let's see how this happens.”</p>
           `,
-          speechRaw: `Good afternoon everyone. We are here to present our topic 'How War Affects the Indian Economy and its financial system'. Before we start, let me introduce our team. We are a team of 9 members, and each of us will explain a different part of the topic. Before we go into the main topic, let me give you a simple introduction about what is war: “When we hear the word war, the first things that come to our mind are soldiers, weapons and destruction. But there is another battlefield that we often don't see — the battlefield of money. Today, countries are deeply connected. India buys from other countries, sells to them, and does business with people and companies around the world. So when a war happens somewhere, the impact doesn't always stop at the battlefield. It can travel through the connections between countries and eventually reach India. Think of it like this: A war starts in one part of the world… but its consequences can travel much farther. And that is exactly what we are going to explore today — how a war outside India can create effects inside India's financial system. So, instead of looking at war only as a military event, let's look at it as a financial shock that can travel from one country to another.” “The battlefield may be far away… but the impact can reach our pockets, our businesses and our country.” “So, let's see how this happens.”`,
+          speechRaw: `Good morning everyone. We are here to present our topic 'How War Affects the Indian Economy and its financial system'. Before we start, let me introduce our team. We are a team of 10 members, and each of us will explain a different part of the topic. Before we go into the main topic, let me give you a simple introduction about what is war: “When we hear the word war, the first things that come to our mind are soldiers, weapons and destruction. But there is another battlefield that we often don't see — the battlefield of money. Today, countries are deeply connected. India buys from other countries, sells to them, and does business with people and companies around the world. So when a war happens somewhere, the impact doesn't always stop at the battlefield. It can travel through the connections between countries and eventually reach India. Think of it like this: A war starts in one part of the world… but its consequences can travel much farther. And that is exactly what we are going to explore today — how a war outside India can create effects inside India's financial system. So, instead of looking at war only as a military event, let's look at it as a financial shock that can travel from one country to another.” “The battlefield may be far away… but the impact can reach our pockets, our businesses and our country.” “So, let's see how this happens.”`,
           outgoingCue: '(Person 2): "Now that we understand how war can reach India, let’s see how it affects our daily expenses, prices, and currency. Person 2 : How war Hits our wallet"'
         },
         {
@@ -5098,7 +5177,7 @@
           topic: 'How War Hits Our Wallet – Prices & Currency',
           incomingCue: '(Person 2): "Now that we understand how war can reach India, let’s see how it affects our daily expenses, prices, and currency. Person 2 : How war Hits our wallet"',
           speechHtml: `
-            <p><strong>Good afternoon everyone.</strong></p>
+            <p><strong>Good morning everyone.</strong></p>
             <p>Today, I am going to speak about <strong>“How War Hits Our Wallet – The Impact of War on Prices and Currency.”</strong></p>
             <p>When we think about war, we think about destruction and loss of lives. But war also affects the economy and our daily expenses.</p>
             <p><strong>First, war can disrupt the supply of oil, food, and raw materials.</strong> When supply decreases, prices usually increase.</p>
@@ -5112,7 +5191,7 @@
             <p>Therefore, even a war far away from India can affect us through fuel prices, food prices, inflation, and the value of our currency.</p>
             <p><strong>Thank you.</strong></p>
           `,
-          speechRaw: `Good afternoon everyone. Today, I am going to speak about “How War Hits Our Wallet – The Impact of War on Prices and Currency.” When we think about war, we think about destruction and loss of lives. But war also affects the economy and our daily expenses. First, war can disrupt the supply of oil, food, and raw materials. When supply decreases, prices usually increase. For India, this is important because we import a large amount of crude oil. Higher oil prices can increase transportation and production costs, which can make everyday products more expensive. War can also cause inflation. Inflation means prices increase and the purchasing power of our money decreases. For example, ₹1,000 may buy fewer things than before. Another major impact is on the Indian rupee. During uncertainty, investors often prefer safer currencies like the US dollar. This can weaken the rupee and make imports more expensive. So, the simple chain is: War → Supply disruption → Higher prices → Inflation → Rupee pressure → Higher import costs → Impact on our wallet. Therefore, even a war far away from India can affect us through fuel prices, food prices, inflation, and the value of our currency. Thank you.`,
+          speechRaw: `Good morning everyone. Today, I am going to speak about “How War Hits Our Wallet – The Impact of War on Prices and Currency.” When we think about war, we think about destruction and loss of lives. But war also affects the economy and our daily expenses. First, war can disrupt the supply of oil, food, and raw materials. When supply decreases, prices usually increase. For India, this is important because we import a large amount of crude oil. Higher oil prices can increase transportation and production costs, which can make everyday products more expensive. War can also cause inflation. Inflation means prices increase and the purchasing power of our money decreases. For example, ₹1,000 may buy fewer things than before. Another major impact is on the Indian rupee. During uncertainty, investors often prefer safer currencies like the US dollar. This can weaken the rupee and make imports more expensive. So, the simple chain is: War → Supply disruption → Higher prices → Inflation → Rupee pressure → Higher import costs → Impact on our wallet. Therefore, even a war far away from India can affect us through fuel prices, food prices, inflation, and the value of our currency. Thank you.`,
           outgoingCue: '(Person 3): "We have seen how war reaches our wallets through prices and the rupee. Now, let’s look at how these changes affect the market."'
         },
         {
@@ -5136,10 +5215,10 @@
           id: 4,
           speaker: 'PERSON 4: SRIKAR',
           presenterName: 'Srikar',
-          topic: 'Stock Market Under Pressure – Sensex & Nifty 50',
+          topic: 'how war makes banks under pressure',
           incomingCue: '(Person 4): "We’ve seen the wider market reactions to war. Now, let’s focus on the Indian stock market, especially the Sensex and Nifty 50."',
           speechHtml: `
-            <p><strong>Good afternoon, ladies and gentlemen.</strong></p>
+            <p><strong>Good morning, ladies and gentlemen.</strong></p>
             <p>So far, we have seen how wars affect different sectors and the Indian economy. Now, let's step into the shoes of investors and look at their impact on the Indian stock market - <strong>Sensex and Nifty 50</strong>.</p>
             <p>To begin with, the most immediate impact is <strong>market volatility</strong>. Geopolitical uncertainty creates fear, leading to sudden selling. For example, when the Russia-Ukraine conflict began in February 2022, the <strong>Sensex fell by over 2,700 points in a single session</strong>.</p>
             <p>Moving from market sentiment to capital flows, <strong>foreign investment can also decline</strong>. FPIs may withdraw money from emerging markets and move towards safer assets, putting pressure on Indian stocks and the rupee.</p>
@@ -5151,7 +5230,7 @@
             </div>
             <p><strong>Thank you.</strong></p>
           `,
-          speechRaw: `Good afternoon, ladies and gentlemen. So far, we have seen how wars affect different sectors and the Indian economy. Now, let's step into the shoes of investors and look at their impact on the Indian stock market - Sensex and Nifty 50. To begin with, the most immediate impact is market volatility. Geopolitical uncertainty creates fear, leading to sudden selling. For example, when the Russia-Ukraine conflict began in February 2022, the Sensex fell by over 2,700 points in a single session. Moving from market sentiment to capital flows, foreign investment can also decline. FPIs may withdraw money from emerging markets and move towards safer assets, putting pressure on Indian stocks and the rupee. But the biggest concern for India is crude oil. Higher oil prices increase our import bill, inflation and production costs. At the same time, a weaker rupee makes these imports even more expensive. Beyond oil, wars can also affect global trade, disrupting supply chains and increasing freight costs and delivery times. However, the impact is not equal across sectors. Aviation and automobiles may face higher costs, while defence, metals and upstream oil companies may benefit. So, to conclude: "War creates the shock, but economic fundamentals determine its duration and ultimate impact on the Indian stock market." Thank you.`,
+          speechRaw: `Good morning, ladies and gentlemen. So far, we have seen how wars affect different sectors and the Indian economy. Now, let's step into the shoes of investors and look at their impact on the Indian stock market - Sensex and Nifty 50. To begin with, the most immediate impact is market volatility. Geopolitical uncertainty creates fear, leading to sudden selling. For example, when the Russia-Ukraine conflict began in February 2022, the Sensex fell by over 2,700 points in a single session. Moving from market sentiment to capital flows, foreign investment can also decline. FPIs may withdraw money from emerging markets and move towards safer assets, putting pressure on Indian stocks and the rupee. But the biggest concern for India is crude oil. Higher oil prices increase our import bill, inflation and production costs. At the same time, a weaker rupee makes these imports even more expensive. Beyond oil, wars can also affect global trade, disrupting supply chains and increasing freight costs and delivery times. However, the impact is not equal across sectors. Aviation and automobiles may face higher costs, while defence, metals and upstream oil companies may benefit. So, to conclude: "War creates the shock, but economic fundamentals determine its duration and ultimate impact on the Indian stock market." Thank you.`,
           outgoingCue: '(Person 5): "The stock market is only one part of the picture. Let’s now see how these effects spread to the Indian economy and people’s livelihoods."'
         },
         {
@@ -5161,7 +5240,7 @@
           topic: 'Impact of War on the Indian Economy',
           incomingCue: '(Person 5): "The stock market is only one part of the picture. Let’s now see how these effects spread to the Indian economy and people’s livelihoods."',
           speechHtml: `
-            <p><strong>Good afternoon everyone.</strong></p>
+            <p><strong>Good morning everyone.</strong></p>
             <p>Today, I am going to speak about the <strong>impact of war on the Indian economy</strong>.</p>
             <p>War affects India in many ways:</p>
             <p>• First, it can lead to <strong>unemployment</strong>, as businesses may face difficulties and reduce job opportunities.</p>
@@ -5174,7 +5253,7 @@
             </div>
             <p><strong>Thank you.</strong></p>
           `,
-          speechRaw: `Good afternoon everyone. Today, I am going to speak about the impact of war on the Indian economy. War affects India in many ways. First, it can lead to unemployment, as businesses may face difficulties and reduce job opportunities. Second, war can cause lower economic growth, affecting the country's development. Third, it can increase food prices, making daily life difficult for ordinary people. War can also disturb international trade and create shortages of essential goods. As a result, poor and middle-class families may face more financial problems. To conclude, war not only destroys lives but also affects a country's economic development and people's living standards. Thank you.`,
+          speechRaw: `Good morning everyone. Today, I am going to speak about the impact of war on the Indian economy. War affects India in many ways. First, it can lead to unemployment, as businesses may face difficulties and reduce job opportunities. Second, war can cause lower economic growth, affecting the country's development. Third, it can increase food prices, making daily life difficult for ordinary people. War can also disturb international trade and create shortages of essential goods. As a result, poor and middle-class families may face more financial problems. To conclude, war not only destroys lives but also affects a country's economic development and people's living standards. Thank you.`,
           outgoingCue: '(Person 6): "We’ve seen how war affects jobs, prices, trade, and growth. Now, let’s understand what the Indian government does in response."'
         },
         {
@@ -5245,8 +5324,8 @@
         },
         {
           id: 9,
-          speaker: 'PERSON 9: DIVYA',
-          presenterName: 'Divya',
+          speaker: 'PERSON 9: LOKESH',
+          presenterName: 'Lokesh',
           topic: 'Conclusion: Summarising the Impact',
           incomingCue: '(Person 9): "These solutions show how India can prepare for future uncertainty. Finally, let’s bring together the key points of our presentation."',
           speechHtml: `
@@ -5261,6 +5340,25 @@
             </div>
           `,
           speechRaw: `Finally, I would like to conclude our presentation by summarising the impact of wars on India and its financial economy: War is not only a military issue. It can become an economic and financial issue. It can affect markets, prices, currency, banks, government spending and economic growth. India cannot control wars in other countries, but it can prepare itself to handle their effects. A strong financial system, diversified trade and a resilient economy can reduce the impact. Strong final line: “We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”`,
+          outgoingCue: '(Person 10): "This final wrap-up brings together everything we have learned about resilience and financial preparedness."'
+        },
+        {
+          id: 10,
+          speaker: 'PERSON 10: DIVYA',
+          presenterName: 'Divya',
+          topic: 'Final Strategic Wrap-Up',
+          incomingCue: '(Person 10): "This final wrap-up brings together everything we have learned about resilience and financial preparedness."',
+          speechHtml: `
+            <p><strong>Today, we have seen how war can affect India far beyond the battlefield.</strong></p>
+            <p>It can change <strong>prices, trade, capital flows, banks, government spending and economic growth</strong>.</p>
+            <p>The key lesson is simple: <strong>India cannot prevent every global war, but it can reduce its financial impact through preparedness</strong>.</p>
+            <p>A strong financial system, diversified trade, resilient industry and smart policy planning can help the country absorb these shocks and recover faster.</p>
+            <div class="quote-block" style="border-left-color: var(--color-gold); background: rgba(180, 83, 9, 0.08);">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-gold); font-weight: 800; text-transform: uppercase;">Final Strategic Message:</span><br>
+              <strong style="font-size: 1.05rem; color: #0f172a;">“We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”</strong>
+            </div>
+          `,
+          speechRaw: `Today, we have seen how war can affect India far beyond the battlefield. It can change prices, trade, capital flows, banks, government spending and economic growth. The key lesson is simple: India cannot prevent every global war, but it can reduce its financial impact through preparedness. A strong financial system, diversified trade, resilient industry and smart policy planning can help the country absorb these shocks and recover faster. Final strategic message: “We may not be able to prevent every war, but we can prepare our economy to withstand its financial impact.”`,
           outgoingCue: 'Final Line Delivered. Presentation Concluded.'
         }
       ];
@@ -5287,9 +5385,12 @@
 
       function renderSpeakerDrawer(idx) {
         const item = speakerDossier[idx] || speakerDossier[0];
+        const totalSlides = Math.max(1, speakerDossier.length - 1);
+        const currentLabel = String(idx === 0 ? 0 : idx).padStart(2, '0');
+        const totalLabel = String(totalSlides).padStart(2, '0');
         if (drawerBadge) drawerBadge.textContent = item.speaker;
         if (drawerSpeakerTitle) drawerSpeakerTitle.textContent = item.topic;
-        if (drawerSpeakerSub) drawerSpeakerSub.textContent = `Active Presenter: ${item.presenterName} • Slide 0${idx}/09`;
+        if (drawerSpeakerSub) drawerSpeakerSub.textContent = `Active Presenter: ${item.presenterName} • Slide ${currentLabel}/${totalLabel}`;
         if (drawerIncomingText) drawerIncomingText.textContent = item.incomingCue;
         if (drawerSpeechBody) drawerSpeechBody.innerHTML = item.speechHtml;
         if (drawerOutgoingText) drawerOutgoingText.textContent = item.outgoingCue;
@@ -5544,7 +5645,7 @@
           playChime(392 + cineIdx * 80, 0.3);
 
           if (cineIdx === 3) {
-            // Reveal 9-member team cards
+            // Reveal 10-member team cards
             const memberCards = document.querySelectorAll('.team-member-card');
             memberCards.forEach((c, idx) => {
               setTimeout(() => c.classList.add('shown'), idx * 80);
